@@ -1,0 +1,81 @@
+{# page:贷款种类页面 #}
+{# author:chencc #}
+
+{% extends "base.html" %}
+{% load static %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】高庄效贷{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+    <link rel="stylesheet" type="text/css" href="{% static 'loans/loans.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="breadnav">
+        <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a>
+        > <a href="/loans/"> 高庄效贷</a>
+    </div>
+    <hr>
+    <div class="img">
+        <image src="{% static 'image/header.jpg' %}" alt="高庄" style="width:100%"></image>
+    </div>
+    <div class="loanInfo">
+        <div class="credit">
+            <h3>信用贷款</h3>
+            {% for x in credit %}
+            <div class="easy row">
+                <div class="col-sm-4">
+                    <h4>{{ x.name }}</h4>
+                    <p>{{ x.info }}</p>
+                </div>
+                <div class="col-sm-2">
+                    <span class="num">{{ x.amountmin }}-{{ x.amountmax }}</span>万
+                    <br/>额度
+                </div>
+                <div class="col-sm-2">
+                    <span class="num">{{ x.monthmin }}-{{ x.monthmax }}</span>
+                    <br/>个月
+                </div>
+                <div class="col-sm-2">
+                    <span class="numi">{{ x.monthirmin }}-{{ x.monthirmax }}</span><br/>月利率
+                </div>
+                <div class="col-sm-2" style="margin-top: 15px">
+                    <a class="btn btn-primary" href="/apply/?id={{ x.id }}">立即申请</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="credit">
+            <h3>抵押贷款</h3>
+            {% for x in mortgage %}
+                <div class="easy row">
+                    <div class="col-sm-4">
+                        <h4>{{ x.name }}</h4>
+                        <p>{{ x.info }}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="num">{{ x.amountmin }}-{{ x.amountmax }}</span>万
+                        <br/>额度
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="num">{{ x.monthmin }}-{{ x.monthmax }}</span>
+                        <br/>个月
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="numi">{{ x.monthirmin }}-{{ x.monthirmax }}</span><br/>月利率
+                    </div>
+                    <div class="col-sm-2" style="margin-top: 15px">
+                        <a class="btn btn-primary" href="/apply/?id={{ x.id }}">立即申请</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="{% static 'loans/loans.js' %}"></script>
+
+{% endblock %}

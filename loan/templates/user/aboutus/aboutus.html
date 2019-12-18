@@ -1,0 +1,41 @@
+{# page:关于我们 #}
+{# author:chencc #}
+
+{% extends "user/aboutus/aboutBase.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+
+{% block intro %}
+        <div class="leftbar">
+            <p class="contentTitle">关于我们</p>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link leftlink" href="/aboutus/" style="color: #4fa7f5;
+                    text-underline: #4fa7f5; font-weight: bolder">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link leftlink" href="/connect/">联系我们</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link leftlink" href="/company/">商务合作</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link leftlink" href="/service/">客户服务</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="rightbar">
+            <img src="{% static 'image/head.jpg' %}" alt="高庄效贷" class="head">
+            <div id="about" class="aboutUsInfo"><br>
+                <p class="title">业务介绍：</p>
+                <p class="intro">高庄金融是高庄集团旗下金融科技版块，简称“高庄金融”。 高庄金融帮助企业建立可靠的信用数据资产，获得更高效的融资体验，更便捷的支付方案。 我们携手行业内领先的金融机构，共同为高庄的近680万家高庄企业客户创造价值。 用科技，让天下企业融资不难。</p>
+
+                <p class="title">功能介绍</p>
+                <p class="intro">高庄互联网金融是高庄集团旗下金融科技版块，简称“高庄金融”。 高庄金融帮助企业建立可靠的信用数据资产，获得更高效的融资体验，更便捷的支付方案。 我们携手行业内领先的金融机构，共同为高庄的近680万家高庄企业客户创造价值。 用科技，让天下企业融资不难。</p>
+            </div>
+
+        </div>
+
+{% endblock %}

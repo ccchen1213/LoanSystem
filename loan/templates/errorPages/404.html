@@ -1,0 +1,58 @@
+{# page:404错误页面 #}
+{# author:chencc #}
+
+{% load staticfiles %}
+<html>
+
+<head>
+    <title>出错啦</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'alert/xcConfirm.css' %}">
+    <link rel="icon" href="../static/image/piggy_bank.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'alert/xcConfirm.js' %}"></script>
+    <style>
+        body{
+            min-width: 1220px;
+            background-image: url({% static './image/error.jpg' %});
+            background-size: cover;
+            text-align: center;
+        }
+        .background {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .goback{
+            background-color: #ff4211;
+            font-weight: bolder;
+        }
+        .num{
+            font-size: 100px;
+            color: #57acff;
+        }
+        .text{
+            font-size: 25px;
+            font-family: "Microsoft Yahei UI Light";
+            color: #ffb339;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <p class="num">404</p>
+        <p class="text">We can't seem to find the <br>page you're looking for</p>
+        <a class="btn goback" href="/home/">GO BACK HOME</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+{# page:企业认证页面 #}
+{# author:syn #}
+
+{% extends "base.html" %}
+{% load static %}
+
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】企业认证{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'certification/certification.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'afterBase/afterBase.css' %}" />
+
+{% endblock %}
+
+{% block content %}
+<div class="breadnav">
+    <a href="/index" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/certification"> 企业认证</a>
+</div>
+<hr>
+
+
+    <div class="container" style="display: flex">
+        <!-- 侧边栏 -->
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="header" style="font-size:17px;color:#a1aab2">我的金融助手</li>
+                    <li><a href="/myLoan/"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
+                    <li class="header" style="font-size:17px;color:#a1aab2">公司资料管理</li>
+                    <li><a href="/certification/" style="color: #007bff; font-weight: bolder"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
+                    <li class="header" style="font-size:17px;color:#a1aab2">基本设置</li>
+                    <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
+                    <li class="header" style="font-size:17px;color:#a1aab2">个人信用</li>
+                    <li><a href="/credit/"><i class="fa fa-phone-square"></i> <span>信用评级</span></a></li>
+
+                </ul>
+            </section>
+        </aside>
+
+    <div class="form_bar">
+        <form class="form-horizontal" role="form" action="//" method="post">
+            {% csrf_token %}
+            <div class="div_h5" style="margin-left:-150px">
+                <h5>企业认证</h5>
+            </div>
+
+            <div class="form-group" style=" margin-top: 40px;">
+                <label for="firstname" class="col-sm-4 control-label">企业名称</label>
+                <div class="col-sm-5">
+                    {% if customer.company == None%}
+                    <input type="text" class="form-control" id="Company_Name" placeholder="请输入企业名称"
+                        style="font-size:16px" value="">
+                    {% else %}
+                    <input type="text" class="form-control" id="Company_Name" placeholder="请输入企业名称"
+                        style="font-size:16px" value="{{ customer.company }}">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-4 control-label">统一社会信用代码</label>
+                <div class="col-sm-5">
+                    {% if customer.credit_id == None%}
+                    <input type="text" class="form-control" id="Credit_code" placeholder="请输入统一社会信用代码" value=""
+                        style="font-size:16px">
+                    {% else %}
+                    <input type="text" class="form-control" id="Credit_code" placeholder="请输入统一社会信用代码"
+                        value="{{ customer.credit_id }}" style="font-size:16px">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="firstname" class="col-sm-4 control-label">法定代表人姓名</label>
+                <div class="col-sm-5">
+                    {% if customer.legal_name == None%}
+                    <input type="text" class="form-control" id="Legal_representative_name" placeholder="请输入法定代表人姓名"
+                        value="" style="font-size:16px">
+                    {% else %}
+                    <input type="text" class="form-control" id="Legal_representative_name" placeholder="请输入法定代表人姓名"
+                        value="{{ customer.legal_name }}" style="font-size:16px">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-4 control-label">法定代表人身份证号码</label>
+                <div class="col-sm-5">
+                    {% if customer.legal_id == None%}
+                    <input type="text" class="form-control" id="Legal_representative_id" placeholder="请输入法定代表人身份证号码"
+                        value="" style="font-size:16px">
+                    {% else %}
+                    <input type="text" class="form-control" id="Legal_representative_id" placeholder="请输入法定代表人身份证号码"
+                        value="{{ customer.legal_id }}" style="font-size:16px">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="firstname" class="col-sm-4 control-label">法定代表人银行卡号</label>
+                <div class="col-sm-5">
+                    {% if customer.card == None%}
+                    <input type="text" class="form-control" id="Legal_representative_card" placeholder="请输入银行卡号"
+                        value="" style="font-size:16px">
+                    {% else %}
+                    <input type="text" class="form-control" id="Legal_representative_card" placeholder="请输入银行卡号"
+                        value="{{ customer.card }}" style="font-size:16px">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-4 control-label">银行预留手机号</label>
+                <div class="col-sm-5">
+                    {% if customer.bank_phone == None%}
+                    <input type="text" class="form-control" id="Bank_phone" placeholder="请输入银行预留手机号" value=""
+                        style="font-size:16px">
+                    {% else %}
+                    <input type="text" class="form-control" id="Bank_phone" placeholder="请输入银行预留手机号"
+                        value="{{ customer.bank_phone }}" style="font-size:16px">
+                    {% endif %}
+                </div>
+            </div>
+            <p id="info"></p>
+            <div style="margin-left: 80px;display: flex;flex-direction: row;margin-top: 15px;">
+                <input type="button" value="提交" class="btn_submit" name="submit">
+                <!-- <p class="login_bar_p">&nbsp;&nbsp;免费注册</p> -->
+            </div>
+        </form>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="{% static 'certification/certification.js' %}"></script>
+<script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script>
+<script>
+    $.sidebarMenu($('.sidebar-menu'))
+</script>
+{% endblock %}

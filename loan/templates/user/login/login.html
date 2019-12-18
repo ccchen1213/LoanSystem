@@ -1,0 +1,107 @@
+{# page:登录页 #}
+{# author:syn #}
+
+{% extends "base.html" %}
+{% load static %}
+
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】登录{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'login/login.css' %}" />
+
+<style>
+    input {
+        border: 1px solid rgb(56, 76, 252);
+        height: 30px;
+        width: 200px;
+        padding: 7px 0px;
+        border-radius: 10px;
+        padding-left: 5px;
+        margin-top: 5px;
+        outline: none;
+
+    }
+
+    .login_bar_p {
+        font-size: 15px;
+        display: block;
+        margin-top: 7px;
+    }
+
+    .btn_login {
+        background-color: #2192f5;
+        color: white;
+        height: 30px;
+        line-height: 15px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="body">
+
+{#    <div class="breadnav">#}
+{#        <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a>#}
+{#        > <a href="/loans/"> 高庄效贷</a>#}
+{#    </div>#}
+    <div class="breadnav">
+        <span><a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/login">
+                登录</a></span>
+    </div>
+<hr>
+</div>
+
+<!-- <div class="container"> -->
+<div class="login">
+    <!-- <img src="{% static 'image/login.jpg' %}" class="login_img"> -->
+    <div class="login_bar" style="opacity:1;">
+        <div class="login_bar_top">
+            <p>登录</p>
+        </div>
+
+        <div class="login_text_bar">
+
+            <form action="/loginPost/" method="post">
+                {% csrf_token %}
+                <div style="display: flex;flex-direction: row;">
+                    <div style="display: flex;flex-direction: row;">
+                        <p class="login_bar_p">手机/邮箱：</p>
+                        <input type="email" name="phone_email" id="email_text">
+                    </div>
+
+                </div>
+                <p id="info" class="info">{{msg}}</p>
+                <div style="display: flex;flex-direction: row;margin-left: 20px;margin-top: 15px;">
+                    <p class="login_bar_p">  密码：</p>
+                    <input type="password" name="password">
+                    <!-- <p class="login_bar_p">&nbsp;&nbsp;忘记密码？</p> -->
+                </div>
+    
+                <div style="margin-left: 80px;display: flex;flex-direction: row;margin-top: 15px;">
+                    <input type="submit" value="登录" class="btn_login" name="submit">
+                    <p class="login_bar_p">&nbsp;&nbsp;免费注册</p>
+                </div>
+
+            </form>
+
+            <div style="text-align: center;line-height: 10px;margin-top: 20px; ">
+                <p class="login_bar_p" style=" font-size: 12px;line-height:1px">云通行证登录</p>
+                <br>
+                <p class="login_bar_p" style=" font-size: 12px;">代理商登录</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div> -->
+
+
+<script type="text/javascript" src="{% static 'login/login.js' %}"></script>
+
+{% endblock %}

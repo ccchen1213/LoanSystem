@@ -1,0 +1,60 @@
+{# page:关于我们 #}
+{# author:chencc #}
+
+{% extends "user/aboutus/aboutBase.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+{% block intro %}
+<div class="leftbar">
+    <p class="contentTitle">关于我们</p>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link leftlink" href="/aboutus/">关于我们</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link leftlink" href="/connect/">联系我们</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link leftlink" href="/company/">商务合作</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link leftlink" href="/service/" style="color: #4fa7f5;
+                    text-underline: #4fa7f5; font-weight: bolder">客户服务</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="rightbar">
+    <img src="{% static 'image/head.jpg' %}" alt="高庄效贷" class="head">
+    <div id="about" class="aboutUsInfo"
+         style="display:flex;
+             flex-direction:row;
+             margin-top: 20px;
+             margin-left: 40px;
+             text-align: center;"><br>
+        <div style="text-align: center; margin-top: 20px; margin-left: 40px; text-align: center;">
+            <i class="iconfont" style="font-size:50px; ">&#xe637;</i>
+            <p>数据金融论坛平台</p>
+        </div>
+        <div style=" margin-top: 20px; margin-left: 40px; text-align: center;">
+            <i class="iconfont" style="font-size:50px; ">&#xe613;</i>
+            <p>在线客服</p>
+            <p>在线对话为您解决问题</p>
+            <p>9:00-18:00</p>
+        </div>
+        <div style=" margin-top: 20px; margin-left: 40px; text-align: center;">
+            <i class="iconfont" style="font-size:50px; ">&#xe6c7;</i>
+            <p>400-343-89</p>
+            <p>服务时间：8：00-19:00</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

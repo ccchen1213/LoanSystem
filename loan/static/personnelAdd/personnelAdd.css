@@ -1,0 +1,17 @@
+.form-group{
+    display: flex;
+    flex-direction: row;
+}
+.mainbar{
+    padding-left: 300px; 
+    /* padding-right: 100px;  */
+    padding-top: 30px; 
+    padding-bottom: 30px; 
+    /* display: flex;
+    flex-direction: row; */
+}
+
+.mainbar span{
+    display: block;
+}
+

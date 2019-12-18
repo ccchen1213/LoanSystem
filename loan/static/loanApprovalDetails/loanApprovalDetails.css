@@ -1,0 +1,26 @@
+.imgbar{
+    display: flex;
+    flex-direction: row;
+}
+.imgbar div{
+    padding-top: 30px;
+    padding-right: 43px;
+}
+.mainbar_a{
+    padding-top: 40px;
+}
+.mainbar{
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 3px 3px rgb(233, 233, 233);
+}
+.btn_bar{
+    text-align:center;
+   
+}
+.btn_bar button{
+    margin-right: 20px;
+}

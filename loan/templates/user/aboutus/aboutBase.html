@@ -1,0 +1,45 @@
+{# page:关于我们页面模板 #}
+{# author:chencc #}
+
+{% extends "base.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】关于我们{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'aboutus/aboutus.css' %}" />
+<style>
+    input {
+        border: 1px solid rgb(56, 76, 252);
+        height: 30px;
+        width: 200px;
+        padding: 7px 0px;
+        border-radius: 10px;
+        padding-left: 5px;
+        margin-top: 5px;
+        outline: none;
+
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="body">
+    <div class="bread">
+        <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="aboutus.html"> 关于我们</a>
+
+    </div>
+    <hr>
+
+    <div class="content">
+        {% block intro %}
+
+        {% endblock %}
+
+    </div>
+</div>
+{% endblock %}

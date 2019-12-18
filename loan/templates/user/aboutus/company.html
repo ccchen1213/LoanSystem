@@ -1,0 +1,41 @@
+{# page:商务合作 #}
+{# author:chencc #}
+
+{% extends "user/aboutus/aboutBase.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--预先加载基本模板-->
+
+{% block intro %}
+<div class="leftbar">
+    <p class="contentTitle">商务合作</p>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link leftlink" href="/aboutus/">关于我们</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link leftlink" href="/connect/">联系我们</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link leftlink" href="/company/" style="color: #4fa7f5;
+                    text-underline: #4fa7f5; font-weight: bolder">商务合作</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link leftlink" href="/service/">客户服务</a>
+        </li>
+    </ul>
+</div>
+
+<div class="rightbar">
+    <img src="{% static 'image/head.jpg' %}" alt="高庄效贷" class="head">
+    <div id="about" class="aboutUsInfo"><br>
+        <p class="title">媒体采访：</p>
+        <p class="intro">如果有采访需求，请将媒体名称、采访提纲、联系方式发至：glz@glz.com</p>
+
+        <p class="title">商务合作</p>
+        <p class="intro">如有意与高庄银行建立业务合作关系，联系方式发至：glz@glz.com</p>
+    </div>
+
+</div>
+
+{% endblock %}

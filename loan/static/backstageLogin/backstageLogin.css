@@ -1,0 +1,115 @@
+
+
+
+
+.rightbar{
+    margin-top: 30px;
+
+}
+footer{
+    text-align: center;
+    color:#eee;
+    height: 70px;
+    padding-top: 18px;
+    /* line-height: 35px; */
+    background-color: #262d3d;
+    font-size: 12px;
+}
+
+@media all and (max-width: 1200px){
+    body{
+        width: 1200px;
+    }
+    .container{
+        width: 1200px;
+    }
+}
+
+/* 登录页 */
+ .login_img{
+    width: 100%;
+    opacity:0.7;
+}
+.login_bar{
+    background-color: white;
+    width: 420px;
+}
+.login_bar_top{
+    height: 40px;
+    padding-left: 20px;
+     padding-top: 10px;
+    padding-bottom: 10px; 
+    background-color: #0b76d3;
+    color: white;
+
+    line-height: 20px;
+    opacity:0.7;
+    
+} 
+.login_text_bar{
+    padding-top:50px ;
+    /* padding-left: 20px; */
+    padding-bottom: 80px;
+    padding-right: 60px;
+} 
+.login{
+    height: 800px;
+    background-image: url('../image/bklogin.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    opacity:0.7;
+}
+.login_bar{
+    /* text-align: center; */
+    float: right;
+    margin-right: 520px;
+    margin-top:150px;
+}
+.email_btn{
+    font-size: 13px;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    height: 30px;
+    line-height: 10px;
+    margin-left: 10px;
+    outline: none; 
+}
+.info{
+    color:red;
+    font-size: 14px;
+    text-align: center;
+}
+
+.logo{
+    width: 60px;
+    text-decoration: none;
+}
+#login{
+    background-color: #eee;
+    /* font-size: 1.1rem; */
+    font-size: 0.9rem;
+}
+
+footer{
+    text-align: center;
+    color:#eee;
+    height: 70px;
+    padding-top: 18px;
+    /* line-height: 35px; */
+    background-color: #262d3d;
+    font-size: 12px;
+}
+
+@media all and (max-width: 1200px){
+    body{
+        width: 1200px;
+    }
+    .container{
+        width: 1200px;
+    }
+}
+
+#info{
+    text-align: center;
+}

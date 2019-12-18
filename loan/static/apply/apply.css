@@ -1,0 +1,119 @@
+#loan{
+    color:#007bff;
+    font-weight: bolder;
+}
+
+.apply-info{
+    margin:50px 100px;
+    border: 1px solid #e4e4e4;
+}
+.breadnav{
+    margin-left: 100px;
+    font-size: 1.1rem;
+    padding-top: 20px;
+}
+.info{
+    display: flex;
+    /*margin: 30px 100px;*/
+}
+.applyInfo{
+    /*margin:auto;*/
+    padding: 20px 40px;
+    width: 50%;
+    border-right:1px solid #e4e4e4 ;
+    color:#7c7c7c;
+
+}
+.applyInput p{
+    margin-left: 90px;
+}
+.applytitle{
+    width: 100%;
+    padding:10px 10px 0px 10px;
+    border-radius: 5px;
+    background-color: #e4e4e4;
+}
+.value{
+    margin-top: 20px;
+}
+
+.formstyle{
+    width: 240px;
+    height: calc(1.5em + .75rem + 2px);
+    padding: 0.2rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+/*.time{*/
+    /*margin-top: 10px;*/
+/*}*/
+
+.agree {
+    /*padding-top: 12px;*/
+}
+#money{
+}
+
+#month{
+}
+
+.time{
+    margin-top: 10px;
+}
+
+.agree{
+    padding-top: 20px;
+    padding-left: 90px;
+}
+.submit{
+    margin-top: 20px;
+}
+
+.cost{
+    /*margin:auto;*/
+
+    padding: 20px 40px;
+    width: 50%;
+    /*border-right:1px solid #e4e4e4 ;*/
+    color:#7c7c7c;
+
+}
+
+.calcu{
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+
+}
+.waysLabel{
+    width: 96px;
+}
+
+
+.table{
+    border-bottom: 1px solid #eee;
+}
+
+.intro li{
+    width: 120px;
+    margin-left: 20px;
+    text-align: center;
+}
+.intro h5{
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+.tab-content{
+    color: #7c7c7c;
+    font-family: "Microsoft Yahei UI Light","Helvetica Neue","Microsoft Yahei",Verdana,Simsun,"Segoe UI Web Light","Segoe UI Web Regular","Segoe UI","Segoe UI Symbol",HelveticaNeue-Light,Arial,sans-serif;
+    padding:0px 30px 30px 30px;
+}

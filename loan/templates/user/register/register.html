@@ -1,0 +1,118 @@
+{# page:注册页 #}
+{# author:syn #}
+
+{% extends "base.html" %}
+{% load static %}
+
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】注册{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'register/register.css' %}" />
+<style>
+    input {
+        border: 1px solid rgb(56, 76, 252);
+        height: 30px;
+        width: 200px;
+        padding: 7px 0px;
+        border-radius: 10px;
+        padding-left: 5px;
+        margin-top: 5px;
+        outline: none;
+
+    }
+
+    .login_bar_p {
+        font-size: 15px;
+        display: block;
+        margin-top: 7px;
+        margin-right: 10px;
+    }
+
+    .btn_login {
+        background-color: #2192f5;
+        color: white;
+        height: 30px;
+        line-height: 15px;
+        border: none;
+        border-radius: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="body">
+    <div class="breadnav">
+        <span><a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/register">
+                注册</a></span>
+    </div>
+    <hr>
+</div>
+
+<div class="login" style="text-align:center">
+    <div class="login_bar" style="margin: auto;opacity:1;">
+        <div class="login_bar_top">
+            <p>注册</p>
+        </div>
+
+        <div class="login_text_bar">
+
+            <form action="/signupPost/" method="post">
+                {% csrf_token %}
+                <!-- 邮箱 -->
+                <div style="display: flex;flex-direction: column;margin-left: 50px;">
+                    <div style="display: flex;flex-direction: row;">
+                        <p class="login_bar_p">邮箱：</p>
+                        <input type="email" name="phone_email" id="email_text">
+                    </div>
+                    <div>
+                        <input type="button" value="发送验证码" id="btn" class="email_btn">
+                    </div>
+                </div>
+                <!-- 验证码 -->
+
+                <div style="display: flex;flex-direction: row;margin-left:  50px;margin-top: 15px;">
+                    <p class="login_bar_p">验证码: </p>
+                    <input type="password" name="password">
+                    <!-- <p class="login_bar_p">&nbsp;&nbsp;忘记密码？</p> -->
+                </div>
+                <!-- 姓名 -->
+                <div style="display: flex;flex-direction: row;margin-left:  50px;margin-top: 15px;">
+                    <p class="login_bar_p">姓名: </p>
+                    <input name="username" id="username"style=" margin-left:15px;">
+                    <!-- <p class="login_bar_p">&nbsp;&nbsp;忘记密码？</p> -->
+                </div>
+                <!-- 身份证 -->
+                <div style="display: flex;flex-direction: row;margin-left:  50px;margin-top: 15px;">
+                    <p class="login_bar_p">身份证: </p>
+                    <input name="idCard" id="idCard">
+                    <!-- <p class="login_bar_p">&nbsp;&nbsp;忘记密码？</p> -->
+                </div>
+                <!-- 手机号码 -->
+                <div style="display: flex;flex-direction: row;margin-left:  50px;margin-top: 15px;">
+                    <p class="login_bar_p">手机号: </p>
+                    <input name="phone" id="phone">
+                    <!-- <p class="login_bar_p">&nbsp;&nbsp;忘记密码？</p> -->
+                </div>
+                <p id="info" class="info">{{msg}}</p>
+                <!-- 注册按钮 -->
+                <div style="margin-left: 105px;display: flex;flex-direction: row;margin-top: 15px;">
+                    <input type="submit" value="注册" class="btn_register" name="submit">
+                    <!-- <p class="login_bar_p">&nbsp;&nbsp;免费注册</p> -->
+                </div>
+
+            </form>
+
+            <!-- <div style="text-align: center;line-height: 10px;margin-top: 20px; ">
+                <p class="login_bar_p" style=" font-size: 12px;line-height:1px">云通行证登录</p>
+                <br>
+                <p class="login_bar_p" style=" font-size: 12px;">代理商登录</p>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'register/register.js' %}"></script>
+{% endblock %}

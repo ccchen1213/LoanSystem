@@ -1,0 +1,331 @@
+#index{
+  color:#007bff;
+  font-weight: bolder;
+}
+
+.item_img{
+  width: 100%;
+  height: 500px;
+  opacity: 0.7;
+}
+/* 轮播里的字 */
+.item_p{
+  font-size: 14px;
+}
+/* .demo_line_02{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 1px;
+  border-top: 6px solid red;
+  text-align: center;
+  box-shadow: 5px 5px 20px pink; 
+}
+.demo_line_02 span{
+  position: relative;
+  top: -8px;
+  background: red;
+  padding: 0 20px;
+} */
+/* .progress{position: relative; width:300px;margin:100px auto;}
+.progress_bg{height: 10px; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;background-color:#f2f2f2;}
+.progress_bar{background: #5FB878; width: 0; height: 10px; border-radius: 5px;}
+.progress_btn{width: 20px; height: 20px; border-radius: 5px; position: absolute;background:#fff; 
+left: 0px; margin-left: -10px; top:-5px; cursor: pointer;border:1px #ddd solid;box-sizing:border-box;}
+.progress_btn:hover{border-color:#F7B824;} */
+/*common css*/
+.stepPage{
+  display:none;
+  height:100%;
+}
+.stepCont{
+  width:100%;
+}
+.ystep-container {
+  font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Wenquanyi Micro Hei","Microsoft Yahei",Arial,sans-serif;
+  display: inline-block;
+  position: relative;
+  color: #000;
+
+  margin: 20px;
+}
+.ystep-container ul {
+  list-style: none;
+}
+.ystep-container ul,.ystep-container li,.ystep-container p {
+  margin: 0;
+  padding: 0;
+}
+
+/*size css*/
+.ystep-lg {
+  /*width: 700px;*/
+  width:100%;
+  height: 60px;
+  font-size: 18px;
+  /*left: 15%;*/
+  line-height: .3;
+}
+
+/*large size css*/
+.ystep-lg .ystep-container-steps {
+  position: absolute;
+  top: 2px;
+  cursor: pointer;
+  z-index: 10;
+}
+.ystep-lg li {
+  float: left;
+  width: 100px;
+  height: 85px;
+  margin-right: 100px;
+}
+.ystep-lg .ystep-step-done {
+  background-position: -278px -132px;
+}
+.ystep-lg .ystep-step-undone {
+  background-position: -137px -131px;
+}
+.ystep-lg .ystep-step-active {
+  background-position: -414px -131px;
+}
+.ystep-lg .ystep-progress {
+  width: 400px;
+  height: 10px;
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  float: left;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.ystep-lg .ystep-progress-bar {
+  width: 400px;
+  height: 20px;
+  background: #e4e4e4;
+  display: inline-block;
+  float: left;
+}
+.ystep-lg .ystep-progress-highlight {
+  height: 20px;
+    display: block;
+}
+
+/*blue css*/
+.ystep-blue .ystep-step-done {
+
+  background-image: url("../image/pointes_blue.png");
+  background-repeat: no-repeat;
+}
+.ystep-blue .ystep-step-undone {
+  background-image: url("../image/pointes_blue.png");
+  background-repeat: no-repeat;
+  color: #9c9a9b;
+}
+.ystep-blue .ystep-step-active {
+  background-image: url("../image/pointes_blue.png");
+  background-repeat: no-repeat;
+  color: #3276b1;
+}
+.ystep-blue .ystep-progress-highlight {
+  background: #60baff;
+}
+/*按钮样式*/
+.ystep {
+  padding: 20px;
+  /*min-width: 1114px;*/
+}
+.step-button{
+  position: relative;
+  /*top: -85px;*/
+}
+.step-button button{
+  margin: 15px;
+}
+.time_btn{
+  border: black;
+  border-radius: 15px;
+  margin-right: 20px;
+  background-color: #ffffff;
+  padding: 5px 15px;
+  font-size: 14px;
+  color: #7c7c7c;
+}
+.main1_left{
+    background-color: #fafafa;
+    width: 600px;
+    border: 1px solid ;
+    border-color: rgb(243, 243, 243);
+    font-size: 14px;
+    color:#7c7c7c;
+    padding: 20px 80px 40px 80px;
+    /* opacity: 0.9; */
+    margin-top: 50px;
+    border-radius: 2px;
+}
+
+.main1_right{
+  border: 1px solid ;
+  border-color: rgb(243, 243, 243);
+  width: 400px;
+  height: 460px;
+  padding: 50px 40px 20px 70px;
+  color:#7c7c7c;
+  /* opacity: 0.9; */
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px 5px rgb(248, 248, 248);
+}
+.main1_right_p{
+  margin-top: 30px;
+  line-height: 30px;
+}
+#Immediate_loan{
+  border-radius: 25px;
+  width: 200px;
+  font-size: 16px;
+  margin-top: 30px;
+  /* height: 40px;
+  line-height: 10x; */
+}
+.main1{
+  border:1px none none none;
+  padding-bottom: 80px;
+  box-shadow: 0px 0px 5px 5px rgb(224, 224, 224);
+  
+}
+.main_lr{
+display: flex;
+flex-direction: row;
+margin-top: 60px;
+}
+.main1_right p{
+font-size: 14px;
+}
+.main1_span{
+/* display: block; */
+/* margin-left: 300px; */
+}
+
+.blue_sm{
+    width: 200px;
+    height: 30px;
+    background-color:rgb(47, 117, 248);
+    color:white;
+    font-size:14px;
+    border-top-right-radius:15px;
+    border-bottom-right-radius:15px;
+    padding: 10px 15px;
+    line-height: 13px;
+    position: absolute;
+    z-index: 10;
+    margin-top: -270px;
+
+}
+.pp1{
+    margin-top: 70px;
+    /* width: 80%; */
+}
+.pp2{
+  /* margin-top: 70px; */
+  width: 300px;
+  height: 200px;
+}
+.sq_hr{
+  width:200px;
+  display: block;
+  height: 2px;
+  margin-left: 0px;
+  background-color:rgb(47, 117, 248);
+  box-shadow: 0px 0px 2px 2px rgb(241, 241, 241);
+  opacity: 0.7;
+}
+.sq{
+  width: 300px;
+  border:0px solid;
+  padding: 20px 40px ;
+  height: 250px;
+  margin-top: 70px;
+  background-color: #ffffff;
+  box-shadow: 20px 0px 10px 5px rgb(248, 248, 248);;
+  /* box-shadow:10px 3px 40px 6px rgb(236, 236, 236); */
+}
+.main2{
+  padding-top:25px;
+  background-color: #f8f8f8;
+  padding-bottom:90px;
+  /* margin-top: 0px; */
+}
+.sq_q{
+opacity: 0;
+}
+.sq:hover .sq_q{    
+opacity: 1;  /* 鼠标经过 a div 时 b div 显示*/
+}  
+.man_img{
+width: 150px;
+border-radius: 2px;
+}
+.man_t{
+font-size: 14px;
+opacity: 0.5;
+}
+.man_pp{
+font-size: 16px;
+opacity: 0.7;
+}
+.man_p{
+width: 300px;
+border: 0px solid;
+box-shadow:10px 3px 40px 6px rgb(236, 236, 236);
+padding: 25px 40px 10px 40px;
+margin-left: 130px;
+margin-top: 20px;
+background-color: white;
+}
+.man1{
+display: flex;
+flex-direction: row;
+margin-top: 80px;
+
+}
+.man2{
+display: flex;
+flex-direction: row;
+margin-top: 120px;
+margin-left: 200px;
+
+}
+.man_img{
+position: absolute;
+z-index: 10;
+}
+
+.man_top{
+display: flex;
+flex-direction: row;
+}
+.man_bottom{
+display: flex;
+flex-direction: row;
+}
+.main3{
+padding-bottom:100px ;
+} 
+.main4_table{
+box-shadow: 0px 0px 10px 5px rgb(248, 248, 248);
+padding: 30px;
+margin-top: 30px;
+margin-bottom: 30px;
+}
+.m4_p{
+/* font-size: 12px; */
+  opacity: 0.8;
+}
+.m4_p a{
+  color: #212529;
+  text-decoration: none;
+}
+
+
+.shining{
+  background-color: #60baff;
+}

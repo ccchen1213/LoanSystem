@@ -1,0 +1,84 @@
+{# page:人员管理可新增 #}
+{# author:syn #}
+
+{% extends "admin/sidebar.html" %}
+{% load static %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】我的贷款{% endblock %}
+{% block BasicTable %}人员管理新增{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'personnelAdd/personnelAdd.css' %}" />
+
+<style>
+      #personnelManage{
+        color:rgb(33, 86, 233);
+    }
+    .btn-info {
+        background-color: rgb(131, 174, 255);
+        border: none;
+        width: 200px;
+        border-radius: 40px;
+        margin-left: 190px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainbar">
+    <p id="info"></p>
+    <form class="form-horizontal" role="form" >
+        {% csrf_token %}
+        <div class="mainbar_input">
+            <div class="form-group">
+                <label for="firstname" class="col-sm-3 control-label">姓名</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="cname" placeholder="请输入姓名" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-3 control-label">身份证号码</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="idcard" placeholder="请输入身份证号码" value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="firstname" class="col-sm-3 control-label">邮箱</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="email" placeholder="请输入邮箱"
+                        value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-3 control-label">企业名称</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="company" placeholder="请输入企业名称"
+                        value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="firstname" class="col-sm-3 control-label">法定代表人姓名</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="legal_name" placeholder="请输入法定代表人姓名"
+                        value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-3 control-label">法定代表人身份证号码</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="legal_id" placeholder="请输入法定代表人身份证号码" value="">
+                </div>
+            </div>
+        <input type="button"class="btn btn-info" style="margin-left:70px; opacity: 1;margin-top:20px"
+        id="add_btn"value="提交新增"></button>
+    </form>
+
+</div>
+<!-- <img src="{% static 'image/lb1.jpg' %}" > -->
+<script type="text/javascript" src="{% static 'personnelAdd/personnelAdd.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->
+{% endblock %}

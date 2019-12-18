@@ -1,0 +1,218 @@
+{# page:贷款审批 #}
+{# author:syn #}
+
+{% extends "admin/sidebar.html" %}
+{% load static %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】贷款审批{% endblock %}
+{% block BasicTable %}贷款审批{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'loanApproval/loanApproval.css' %}" />
+<style>
+    #loanApproval{
+        color:rgb(33, 86, 233);
+    }
+    ul a {
+        color: rgb(75, 75, 75);
+    }
+    th a {
+        color: rgb(75, 75, 75);
+    }
+    .table th {
+        padding: 10px;
+    }
+
+    .table td {
+        padding: 10px;
+    }
+
+    .btn {
+        width: 100px;
+        font-size: 14px;
+        padding: 0px;
+    }
+
+    .dropdown-menu {
+        /* width: 120px; */
+        color: rgb(19, 19, 19);
+        text-align: center;
+    }
+
+    .dropdown-menu show {
+        width: 80px;
+    }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<!-- Nav tabs -->
+<div class="ulBar">
+    <ul class="nav nav-pills steps" role="tablist">
+        <a  href="/loanApproval/?id=1">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#step0">提交申请</a>
+            </li>
+        </a>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#step1">正在审核</a>
+        </li>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#step2">申请成功</a>
+        </li>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#step3">拨放贷款</a>
+        </li>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#step4">待还贷款</a>
+        </li>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#step5">还清贷款</a>
+        </li>
+    </ul>
+</div>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <!-- 提交申请 -->
+    <div id="step0" class="container tab-pane active"><br>
+        <div class="mainbar">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>单号</th>
+                        <!-- 详情页 -->
+                        <th>借款产品</th>
+                        <th>借款金额/万</th>
+                        <th>借款企业</th>
+                        <th>申请时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody class="state0">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 正在审核 -->
+    <div id="step1" class="container tab-pane fade"><br>
+        <div class="mainbar">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>单号</th>
+                        <!-- 详情页 -->
+                        <th>借款产品</th>
+                        <th>借款金额/万</th>
+                        <th>借款企业</th>
+                        <th>申请时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody class="state1">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 申请成功 -->
+    <div id="step2" class="container tab-pane fade"><br>
+        <div class="mainbar">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>单号</th>
+                        <!-- 详情页 -->
+                        <th>借款产品</th>
+                        <th>借款金额/万</th>
+                        <th>借款企业</th>
+                        <th>申请时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody class="state2">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 拨放贷款 -->
+    <div id="step3" class="container tab-pane fade"><br>
+        <div class="mainbar">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>单号</th>
+                        <!-- 详情页 -->
+                        <th>借款产品</th>
+                        <th>借款金额/万</th>
+                        <th>借款企业</th>
+                        <th>申请时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody class="state3">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 待还贷款 -->
+    <div id="step4" class="container tab-pane fade"><br>
+        <div class="mainbar">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>单号</th>
+                        <!-- 详情页 -->
+                        <th>借款产品</th>
+                        <th>借款金额/万</th>
+                        <th>借款企业</th>
+                        <th>申请时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody class="state4">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 还清贷款 -->
+    <div id="step5" class="container tab-pane fade"><br>
+        <div class="mainbar">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>单号</th>
+                        <!-- 详情页 -->
+                        <th>借款产品</th>
+                        <th>借款金额/万</th>
+                        <th>借款企业</th>
+                        <th>申请时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody class="state5">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'loanApproval/loanApproval.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->
+{% endblock %}

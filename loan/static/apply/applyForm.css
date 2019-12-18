@@ -1,0 +1,35 @@
+#loan{
+    color:#007bff;
+    font-weight: bolder;
+}
+.breadnav{
+    margin-left: 100px;
+    font-size: 1.1rem;
+    padding-top: 20px;
+}
+.applyForm{
+    margin: 20px 100px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+.applyForm ul{
+    display: block;
+    background-color: #eee;
+}
+.applyForm li{
+    display:inline-block;
+}
+.applyForm label{
+    font-weight: bold;
+}
+.applyForm input{
+    width: 100%;
+}
+.fa{
+    margin: 12px;
+}
+.steps{
+
+    text-align: center;
+    margin: 0px auto;
+}

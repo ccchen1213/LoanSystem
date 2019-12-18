@@ -1,0 +1,37 @@
+.form-group{
+    display: flex;
+    flex-direction: row;
+}
+.mainbar{
+    /* padding-left: 100px; 
+    padding-right: 100px;  */
+    padding-top: 30px; 
+    /* padding-bottom: 30px;  */
+    /* display: flex;
+    flex-direction: row; */
+}
+
+.mainbar_textarea textarea{
+height:120px;
+width:300px
+}
+.mainbar_textarea{
+/* width: 300px; */
+}
+.mainbar span{
+    display: block;
+}
+.mainbar_textarea div{
+    margin-bottom: 20px;
+}
+.mainbar_input{
+    display: flex;
+    flex-direction: row;
+    padding-left: 60px;
+    padding-bottom: 30px;
+    /* color:rgb(75, 130, 233); */
+/* margin-left: 300px; */
+}
+/* #quota_min{
+    width: 150px;
+} */

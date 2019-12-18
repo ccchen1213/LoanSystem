@@ -1,0 +1,74 @@
+.breadnav{
+    margin-left: 100px;
+    font-size: 1.1rem;
+    padding-top: 20px;
+}
+.login_img{
+    width: 100%;
+    opacity:0.7;
+}
+
+.login_bar{
+    background-color: white;
+    width: 420px;
+    box-shadow: 0px 0px 2px 2px rgb(94, 128, 240);
+}
+
+.login_bar_top{
+    /* margin-top: 30px; */
+    height: 40px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    background-color: #0b76d3;
+    color: white;
+
+    line-height: 20px;
+    opacity:0.7;
+    
+} 
+.login_text_bar{
+    padding-top:30px ;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    opacity:0.7;
+} 
+.login{
+    height: 600px;
+    background-image: url('../image/login.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    opacity:0.7;
+    padding-top: 60px;
+}
+
+.email_btn{
+    font-size: 13px;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    height: 30px;
+    line-height: 10px;
+   
+    float: left;
+    margin-left: 55px;
+}
+.info{
+    color:red;
+    font-size: 14px;
+    text-align: center;
+}
+.bread{
+    margin-left: 100px;
+    font-size: 0.7rem;
+}
+.btn_register {
+    background-color: #2192f5;
+    color: white;
+    height: 30px;
+    line-height: 15px;
+    border: none;
+    border-radius: 20px;
+}
+/* 以上同登录页 */

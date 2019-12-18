@@ -1,0 +1,28 @@
+.form-group{
+    display: flex;
+    flex-direction: row;
+}
+.mainbar{
+    padding-top: 30px; 
+}
+
+.mainbar_textarea textarea{
+height:120px;
+width:300px
+}
+.mainbar_textarea{
+/* width: 300px; */
+}
+.mainbar span{
+    display: block;
+}
+.mainbar_textarea div{
+    margin-bottom: 20px;
+}
+.mainbar_input{
+    display: flex;
+    flex-direction: row;
+    padding-left: 60px;
+    padding-bottom: 30px;
+}
+

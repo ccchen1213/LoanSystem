@@ -1,0 +1,59 @@
+.topnav{
+    padding-left:30px;
+    padding-right: 30px;
+    background-color: #f9f9f9;
+}
+.logo{
+    width: 100px;
+    text-decoration: none;
+}
+.title{
+    font-size: 22px;
+    font-weight: bold;
+}
+.link{
+    width: 150px;
+    text-align: center;
+    font-size: 1.0rem;
+    border-right: 1px #eee solid;
+    color: #000;
+    
+}
+nav{
+    display: flex;
+}
+.rightlink{
+    padding-top: 14px;
+    display: flex;
+    float: right;
+}
+#login{
+    background-color: #eee;
+    /* font-size: 1.1rem; */
+    font-size: 0.9rem;
+}
+
+footer{
+    text-align: center;
+    color:#eee;
+    height: 70px;
+    padding-top: 18px;
+    /* line-height: 35px; */
+    background-color: #262d3d;
+    font-size: 12px;
+}
+
+
+@media all and (max-width: 1220px){
+    body{
+
+        width: 1220px;
+    }
+
+    .container {
+        width: 1220px;
+
+    }
+}
+    
+

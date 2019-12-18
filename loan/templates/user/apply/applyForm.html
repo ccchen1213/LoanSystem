@@ -1,0 +1,224 @@
+{# page:申请表单页面 #}
+{# author:chencc #}
+
+{% extends "base.html" %}
+{% load static %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】信贷申请{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+    <link rel="stylesheet" type="text/css" href="{% static 'apply/applyForm.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="breadnav">
+        <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a>
+        > <a href="/loans/"  style="color:#000"> 高庄效贷</a>
+        > <a href="/loans/"> 信贷申请</a>
+    </div>
+    <hr>
+    <div class="applyForm">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-pills steps" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="stepOne" data-toggle="pill" href="#step1">基础资料</a>
+            </li>
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+            <li class="nav-item">
+                <a class="nav-link" id="stepTwo" data-toggle="pill" href="#step2">财务资料</a>
+            </li>
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+            <li class="nav-item">
+                <a class="nav-link" id="stepThree" data-toggle="pill" href="#step3">法定代表人资料</a>
+            </li>
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+            <li class="nav-item">
+                <a class="nav-link" id="stepFour" data-toggle="pill" href="#step4">其他资料</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="step1" class="container tab-pane active"><br>
+            {# 公司基本资料表单 #}
+                <form role="form" id="companyForm" style="width: 50%;margin-left: 25%;">
+                    <div class="form-group">
+                        <label for="name">企业名称</label>
+                        <input type="text"
+                               class="form-control"
+                               id="companyName"
+                               name="companyName"
+                               placeholder="请输入企业名称">
+                        <p id="companyNameHint"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">统一社会信用代码</label>
+                        <input type="text"
+                               class="form-control"
+                               id="creditCode"
+                               name="creditCode"
+                               placeholder="请输入统一社会信用代码">
+                        <p id="creditCodeHint"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputfile">营业执照</label><br>
+                        <input type="file"
+                               id="license"
+                               name="license"
+                               accept="image/png, image/jpeg, image/jpg"
+                               class="btn btn-light">
+                        <p id="licenseHint">请上传企业营业执照</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputfile">税务登记证</label><br>
+                        <input type="file"
+                               id="taxRegist"
+                               name="taxRegist"
+                               accept="image/png, image/jpeg, image/jpg"
+                               class="btn btn-light">
+                        <p id="taxRegistHint">请上传税务登记证</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputfile">公司征信查询授权书</label><br>
+                        <input type="file"
+                               id="companyRight"
+                               name="companyRight"
+                               accept="image/png, image/jpeg, image/jpg"
+                               class="btn btn-light">
+                        <p id="companyCreditHint">请上传公司征信查询授权书</p>
+                    </div>
+
+                    <br>
+                    <button type="button" id="nextStep1" class="btn btn-success">下一步</button>
+                </form>
+            </div>
+
+            <div id="step2" class="container tab-pane fade"><br>
+                {# 财务资料表单 #}
+                <form role="form" id="financeForm" style="width: 50%;margin-left: 25%;">
+
+                    <div class="form-group">
+                        <label for="inputfile">公司财务报表</label><br>
+                        <input type="file"
+                               id="finance"
+                               name="finance"
+                               accept="application/pdf, application/msword, text/html"
+                               class="btn btn-light">
+                        <p id="financeHint">请上传最近三年经审计的财务报表</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputfile">资产负债明细表</label><br>
+                        <input type="file"
+                               id="assets"
+                               name="assets"
+                               accept="application/pdf, application/msword, text/html"
+                               class="btn btn-light">
+                        <p id="assetsHint">请上传今年最近月份的资产负债明细表</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputfile">公司缴税完税凭证</label><br>
+                        <input type="file"
+                               id="companyCredit"
+                               name="companyCredit"
+                               accept="image/png, image/jpeg, image/jpg"
+                               class="btn btn-light">
+                        <p id="companyCreditHint">请上传至今月份的缴税完税凭证</p>
+                    </div>
+
+                    <br>
+                    <button type="button" id="nextStep2" class="btn btn-success">下一步</button>
+                </form>
+            </div>
+
+            <div id="step3" class="container tab-pane fade"><br>
+                {# 法定代表人资料表单 #}
+                <form role="form" id="representForm" style="width: 50%;margin-left: 25%;">
+
+                    <div class="form-group">
+                        <label for="inputfile">个人征信授权书</label><br>
+                        <input type="file"
+                               id="personRight"
+                               name="personRight"
+                               accept="image/png, image/jpeg, image/jpg"
+                               class="btn btn-light">
+                        <p>请上传法定代表人的个人征信授权书</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputfile">请下载以下文件</label><br>
+                        <a download="等级评定材料" href="{% static 'lib/admin/muban.xlsx' %}" class="btn btn-light">
+                            点此下载
+                        </a>
+                        <p>请下载按要求填写后上传</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputfile">请上传填写后的文件</label><br>
+                        <input type="file"
+                               id="personFile"
+                               name="personFile"
+                               accept="application/vnd.ms-excel"
+                               class="btn btn-light">
+                        <p>请上传填写后的文件</p>
+                    </div>
+                    <br>
+                    <button type="button" id="nextStep3" class="btn btn-success">下一步</button>
+                </form>
+            </div>
+
+            <div id="step4" class="container tab-pane fade"><br>
+                {# 其他资料表单 #}
+                <form role="form" id="otherForm" style="width: 50%;margin-left: 25%;">
+
+                    <div class="form-group">
+                        <label for="inputfile">与申请借款用途相关的采购合同</label><br>
+                        <input type="file"
+                               id="loanFor"
+                               name="loanFor"
+                               accept="application/pdf, application/msword, text/html"
+                               class="btn btn-light">
+                        <p>请上传与申请借款用途相关的采购合同</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputfile">企业类担保人资料</label><br>
+                        <input type="file"
+                               id="guarantor"
+                               name="guarantor"
+                               accept="application/pdf, application/msword, text/html"
+                               class="btn btn-light">
+                        <p>请上传企业类担保人资料</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputfile">自然人担保人资料</label><br>
+                        <input type="file"
+                               id="natural"
+                               name="natural"
+                               accept="application/pdf, application/msword, text/html"
+                               class="btn btn-light">
+                        <p>请上传至今月份的缴税完税凭证</p>
+                    </div>
+
+                    <br>
+
+                    <button type="button" id="submit" class="btn btn-success">提交</button>
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'apply/applyForm.js' %}"></script>
+{% endblock %}

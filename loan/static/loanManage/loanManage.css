@@ -1,0 +1,31 @@
+
+.mainbar{
+    /* margin-left: 300px; */
+    padding-right: 20px;
+}
+th{
+    font-size: 16px;
+    text-align: center;
+    height: 15px;
+}
+tr{
+    font-size: 14px;
+  text-align: center;
+}
+
+.search_bar{
+    display: flex;
+    flex-direction: row;
+    margin-left: 875px;
+    margin-bottom: 20px;
+}
+.search_bar input{
+    height: 30px;
+    width:200px;
+}
+.search_bar button{
+    height: 30px;
+    line-height: 10px;
+    background-color: rgb(80, 154, 238);
+    border:none;
+}

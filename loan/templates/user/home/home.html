@@ -1,0 +1,350 @@
+{# page:首页 #}
+{# author:syn #}
+
+{% extends "base.html" %}
+{% load static %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】首页{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<!-- 轮播图 -->
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- 指示符 -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- 轮播图片 -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'image/lb1.jpg' %}" class="item_img">
+
+            <div class="carousel-caption" style="position:absolute;left:-500px;top:100px">
+                <h3>扩大你的生意，</h3>
+                <h3>资金不是问题</h3>
+                <p class="item_p">高老庄效贷，小微企业信用贷款服务平台</p>
+                <a href="/loans/" class="btn btn-info" role="button">立即贷款</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'image/lb2.jpg' %}" class="item_img">
+            <div class="carousel-caption" style="position:absolute;left:-500px;top:100px">
+                <h3>小微企业信用贷款服务平台</h3>
+                <p class="item_p">值得信赖!</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'image/lb3.jpg' %}" class="item_img">
+            <div class="carousel-caption" style="position:absolute;left:-500px;top:100px">
+                <h3>我们已为超过1000位企业主</h3>
+                <h3>提供资金服务</h3>    
+                <p class="item_p">申请快速!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 左右切换按钮 -->
+<a class="carousel-control-prev" href="#demo" data-slide="prev" style="top:100px">
+    <span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#demo" data-slide="next" style="top:100px">
+    <span class="carousel-control-next-icon"></span>
+</a>
+<!-- 轮播图end -->
+
+<div class="main1">
+    <div class="container">
+        <div style="text-align:center;margin-top:50px;padding-top: 60px;">
+            <h3><strong>选择最适合你的贷款，提前试算</strong></h3>
+            <p style="opacity: 0.5;">我们根据企业资质，精确匹配最合适的产品</p>
+        </div>
+        
+        <div class="main_lr">
+            <div class="main1_left">
+                <div main1_left_much>
+                    <div class="stepCont stepCont1" style="width:500px;margin-top:40px;margin-left: -10px;">
+                        <p style="display: block;margin-bottom: -30px;position: relative;top:34px;left:10px">借多少</p>
+                        <!-- 菜单导航显示-->
+                        <div class='ystep-container ystep-lg ystep-blue'></div>
+                    </div>
+                </div>
+                <div class="main1_time"style="margin-top:20px">
+                    <span>借多久</span>
+                    <div class="btn-group" style="margin-left:20px;">
+                        <button type="button" class="time_btn" id="three" style=" outline:none;" onclick="dj(this);"value="3">3个月</button>
+                        <button type="button" class="time_btn" id="six" style=" outline:none;" onclick="dj(this);"value="6">6个月</button>
+                        <button type="button" class="time_btn" id="nine" style=" outline:none;" onclick="dj(this);"value="9">9个月</button>
+                        <button type="button" class="time_btn" id="twelve" style=" outline:none;" onclick="dj(this);"value="12">12个月</button>
+                    </div>
+                </div>
+                <div class="Monthly_interest" style="margin-top:40px">
+                    <span>月利息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span style="color:rgb(99, 151, 248)">0.55%</span>
+                </div>
+                <hr style="width: 420px;display: block;margin-left: 0px;margin-top:40px;background : rgb(190, 190, 190);">
+                <div style="margin-top: 40px;">
+                <p>利率基于企业征信和营业状况表现，一般是月息在0.55%-1.8%;</p>
+                <p style="line-height: 5px;">贷款审批通过后，我们会收取审批金额1.5%的费用</p>
+                </div>
+
+            </div>
+
+            <div class="main1_right">
+                <h6 style="color: rgb(13, 90, 206);">还款计算表</h6>
+                <div class="main1_right_p">
+                <p>
+                    <span>借款计算成本：</span>
+                    <span id="cost"class="main1_span">5000,000,00</span>
+                    <span>元</span>
+                </p>
+                <p>
+                    <span>借款总利息：</span>
+                    <span id="interest"class="main1_span">8,250.00</span>
+                    <span>元</span>
+                </p>
+                <p>
+                    <span>手续费：</span>
+                    <span is="Handling_fee"class="main1_span">7500</span>
+                    <span>元</span>
+                </p>
+                <hr>
+                <p>
+                    <span>还款总额：</span>
+                    <span id="Total_repayment">508,250.00</span>
+                    <span>元</span>
+                </p>
+            </div>
+                <a type="button" href="/loans/" id="Immediate_loan"class="btn btn-primary">立即贷款</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main2">
+    <div class="container">
+        <div style="text-align:center;margin-top:30px;padding-top: 30px;">
+            <h3><strong>在线即可申请，以数定额</strong></h3>
+            <p style="opacity: 0.5;">本银行与金融机构联合定制化信贷产品，客户审批通过率更高</p>
+        </div>
+        <div style="display: flex;flex-direction: row;margin-left: 80px;margin-top: -10px;">
+            <div>
+                <img src="{% static 'image/pp.jpg' %}" class="pp1">
+                <div class="blue_sm">
+                    <p>什么样的企业有资格申请</p>
+                </div>
+            </div>
+
+            <div class="sq">
+                <h6><strong>申请资料单</strong></h6>
+                <hr class="sq_hr">
+                <div style="font-size: 14px;">
+                    <p>1,法人身份证原件</p>
+                    <p>2，营业执照</p>
+                    <p>3，银行卡照片</p>
+                    <p>4，有企业开票，税务数据</p>
+                </div>
+                <div class="sq_q">
+                    <img src="{% static 'image/lc_table.png' %}"
+                        style="width: 300px;margin-top: -500px;margin-left: 200px;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="main3">
+    <div class="container">
+        <div style="text-align:center;margin-top:30px;padding-top: 30px;">
+            <h3><strong>客户故事</strong></h3>
+            <p style="opacity: 0.5;">我们的每一次进步，都源于你的支持</p>
+        </div>
+
+        <div class="man_top">
+            <div class="man1">
+                <div>
+                    <img src="{% static 'image/Mj.png' %}" class="man_img">
+                </div>
+                <div class="man_p">
+                    <h6><strong>温先生</strong></h6>
+                    <p class="man_t">湖南**食品科技有限公司</p>
+                    <p class="man_pp">正好需要资金去储备肉品，最后用开票数据作为凭据申请了贷款，
+                        很快就下款了，资金周转效率得到了保证</p>
+                </div>
+            </div>
+
+            <div class="man2">
+                <div>
+                    <img src="{% static 'image/Ml.png' %}" class="man_img">
+                </div>
+                <div class="man_p">
+                    <h6><strong>吴先生</strong></h6>
+                    <p class="man_t">东莞**电子科技有限公司</p>
+                    <p class="man_pp">听朋友说高庄金融可以办理信用贷款，恰逢资金紧张，
+                        抱着试试看的态度做了申请，没想到很快就审批通过了</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="man_bottom">
+            <div class="man1">
+                <div class="man_p">
+                    <h6><strong>温先生</strong></h6>
+                    <p class="man_t">湖南**食品科技有限公司</p>
+                    <p class="man_pp">正好需要资金去储备肉品，最后用开票数据作为凭据申请了贷款，
+                        很快就下款了，资金周转效率得到了保证</p>
+                </div>
+                <div>
+                    <img src="{% static 'image/Mp.png' %}" class="man_img" style="margin-left:-20px">
+                </div>
+
+            </div>
+
+            <div class="man2">
+                <div class="man_p">
+                    <h6><strong>温先生</strong></h6>
+                    <p class="man_t">湖南**食品科技有限公司</p>
+                    <p class="man_pp">正好需要资金去储备肉品，最后用开票数据作为凭据申请了贷款，
+                        很快就下款了，资金周转效率得到了保证</p>
+                </div>
+                <div>
+                    <img src="{% static 'image/Mw.png' %}" class="man_img" style="margin-left:-20px">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main4">
+    <div class="container">
+        <div style="text-align:center;margin-top:30px;padding-top: 30px;">
+            <h3><strong>常见问题</strong></h3>
+        </div>
+
+        <div class="panel-group main4_table" id="accordion">
+            <div class="panel panel-default m4_p">
+                <div class="panel-heading">
+                    <p class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseOne">
+                            >&nbsp;&nbsp;01为什么企业通过高庄贷款是更好的选择？
+                        </a>
+                    </p>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <P>高庄效贷是高庄银行联合多家行业领先的金融机构联合打造，为小微企业专项推出的信用贷款产品。
+                        小微企业通过高庄效贷申请贷款，我们可以给您提供更高的审批通过率、更高的额度、更低的利率和更加安全贴心的服务。
+                        </P>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default m4_p">
+                <div class="panel-heading">
+                    <p class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseTwo">
+                            >&nbsp;&nbsp;02高庄效贷如何帮助企业提升贷款审批通过率？
+                        </a>
+                    </p>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>我们通过机器学习的算法估算企业及企业贷款人的信用评分，全面了解企业经营状况，从而提升贷款审批通过率。
+                        具体来说，我们通过大数据等科技手段，可以整合包括企业信用数据、企业税务数据等在内的
+                        多个数据源，帮助企业构建信用报告，让金融机构读懂小微企业，从而提升贷款审批通过率
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default m4_p">
+                <div class="panel-heading">
+                    <p class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseThree">
+                            >&nbsp;&nbsp;03企业如何从高庄效贷获得更高额度的贷款？
+                        </a>
+                    <p/>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>高庄效贷联合了多家金融机构，通过对企业专业的数据分析，帮助小微企业匹配
+                        更加精准的信贷产品，确保贷款的有效审批和发放。
+                        同时我们还可以结合我们专业的团队服务能力，通过帮助企业配置产品组合，从而获得更多的贷款资金。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default m4_p">
+                <div class="panel-heading">
+                    <p class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseFour">
+                            >&nbsp;&nbsp;04从高庄效贷申请贷款需要抵押吗？
+                        </a>
+                    <p/>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
+                            高庄效贷提供的均为纯信用贷款产品，无需企业提供任何实物、房产形式的抵押物。
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default m4_p">
+                <div class="panel-heading">
+                    <p class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseFive">
+                            >&nbsp;&nbsp;05高庄效贷申请速度快吗？
+                        </a>
+                    <p/>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
+                        高庄效贷提供的绝大部分产品申请流程均为在线方式，无需您通过线下网点递交资料。
+                        审批也是通过在线完成，没有安排线下的现场尽调审查。
+                        所以我们从申请到贷款发放平均时间不超过2个工作日。
+                        甚至个别在线审批的产品可以在几分钟内完成。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{#        <div class="main4_table">#}
+{#            <p class="m4_p">>&nbsp;&nbsp;01为什么企业通过高庄贷款是更好的选择？</p>#}
+{#            <hr>#}
+{#            <p class="m4_p">>&nbsp;&nbsp;02高庄效贷如何帮助企业提升贷款审批通过率？</p>#}
+{#            <hr>#}
+{#            <p class="m4_p">>&nbsp;&nbsp;03企业如何从高庄效贷获得更高额度的贷款？</p>#}
+{#            <hr>#}
+{#            <p class="m4_p">>&nbsp;&nbsp;04从高庄效贷申请贷款需要抵押吗？</p>#}
+{#            <hr>#}
+{#            <p class="m4_p">>&nbsp;&nbsp;05高庄效贷申请速度快吗？</p>#}
+{##}
+{#        </div>#}
+        <div style="text-align:center;margin-bottom: 30px;">
+            <a href="/loans/">查看高庄效贷详情>></a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'home/home.js' %}"></script>
+{% endblock %}

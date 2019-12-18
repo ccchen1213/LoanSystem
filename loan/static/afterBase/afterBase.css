@@ -1,0 +1,99 @@
+.breadnav{
+    margin-left: 100px;
+    font-size: 1.1rem;
+    padding-top: 20px;
+}
+.main-sidebar{
+  border:solid 0px ;
+    /*position: absolute;*/
+    /* top: 0; */
+    /*margin-top: -20px;*/
+	/*left: 60px;*/
+	/*height: 8%;*/
+	/*min-height: 88%;*/
+	width: 230px;
+	z-index: 810;
+  background-color: #ffffff;
+  padding-left: 20px;
+  padding-top: 20px;
+  box-shadow: 0px 0px 3px 3px rgb(240, 240, 240);
+ }
+
+ .sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; }
+    .sidebar-menu > li {
+      position: relative;
+      margin: 0;
+      padding: 0; }
+      .sidebar-menu > li > a {
+        padding: 12px 5px 12px 15px;
+        display: block;
+        border-left: 3px solid transparent;
+        color: #303030; }
+        .sidebar-menu > li > a > .fa {
+          width: 20px; }
+      .sidebar-menu > li:hover > a, .sidebar-menu > li.active > a {
+        color: rgb(95, 95, 95);
+        background: #ffffff;
+        border-left-color: #3c8dbc; }
+      .sidebar-menu > li > .treeview-menu {
+        margin: 0 1px;
+        background: #2c3b41; }
+      .sidebar-menu > li .label,
+      .sidebar-menu > li .badge {
+        margin-top: 3px;
+        margin-right: 5px; }
+    .sidebar-menu li.header {
+      padding: 10px 25px 10px 15px;
+      font-size: 12px;
+      color: black;
+      background: #ffffff; }
+    .sidebar-menu li > a > .fa-angle-left {
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin-right: 10px;
+      margin-top: 3px; }
+    .sidebar-menu li.active > a > .fa-angle-left {
+      transform: rotate(-90deg); }
+    .sidebar-menu li.active > .treeview-menu {
+      display: block; }
+    .sidebar-menu a {
+      color: #272727;
+      text-decoration: none; }
+    .sidebar-menu .treeview-menu {
+      display: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      padding-left: 5px; }
+      .sidebar-menu .treeview-menu .treeview-menu {
+        padding-left: 20px; }
+      .sidebar-menu .treeview-menu > li {
+        margin: 0; }
+        .sidebar-menu .treeview-menu > li > a {
+          padding: 5px 5px 5px 15px;
+          display: block;
+          font-size: 14px;
+          color: #2b2b2b; }
+          .sidebar-menu .treeview-menu > li > a > .fa {
+            width: 20px; }
+          .sidebar-menu .treeview-menu > li > a > .fa-angle-left,
+          .sidebar-menu .treeview-menu > li > a > .fa-angle-down {
+            width: auto; }
+        .sidebar-menu .treeview-menu > li.active > a, .sidebar-menu .treeview-menu > li > a:hover {
+          color: rgb(34, 34, 34); }
+li{
+    font-size: 15px;
+}  
+footer{
+    /* position: absolute; */
+    margin-top: 120px;
+    /* bottom: 0; */
+    /* z-index: 3330; */
+}
+
+

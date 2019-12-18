@@ -1,0 +1,41 @@
+#loan{
+    color:#007bff;
+    font-weight: bolder;
+}
+.breadnav{
+    margin-left: 100px;
+    font-size: 1.1rem;
+    padding-top: 20px;
+}
+.loanInfo{
+    margin:30px 120px;
+    border:1px solid #eeeeee;
+}
+.credit{
+    padding: 30px;
+    margin: 10px 50px
+}
+.credit h3{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+.easy{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    font-family: "Microsoft Yahei UI Light"
+}
+.easy h4{
+    /*font-weight: ;*/
+}
+.num{
+    font-weight: bolder;
+    font-size: 1.4rem;
+}
+
+.numi {
+    font-weight: bolder;
+    font-size: 1.4rem;
+    color: #ff5500;
+
+}

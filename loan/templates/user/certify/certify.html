@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】企业认证{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+    <link rel="stylesheet" type="text/css" href="{% static 'certify/certify.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="breadnav">
+        <a href="/index/" style="color:#000"><i class="fa fa-home"></i> 首页 </a>
+        > <a href="/certify/"> 企业认证</a>
+    </div>
+    <hr>
+
+    <div class="certify">
+        <form class="form-horizontal" role="form">
+
+        </form>
+    </div>
+
+
+    <script type="text/javascript" src="{% static 'loans/loans.js' %}"></script>
+{% endblock %}

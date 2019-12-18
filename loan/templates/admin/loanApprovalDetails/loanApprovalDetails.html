@@ -1,0 +1,88 @@
+{# page:贷款审批详情 #}
+{# author:syn #}
+
+{% extends "admin/sidebar.html" %}
+{% load static %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】贷款审批详情{% endblock %}
+{% block BasicTable %}贷款审批详情{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'loanApprovalDetails/loanApprovalDetails.css' %}" />
+<style>
+    #loanApproval {
+        color: rgb(33, 86, 233);
+    }
+
+    .mainbar img {
+        width: 90%;
+        height: 230px;
+    }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="mainbar">
+    <p> <span>统一信用代码：</span>
+        <span>{{ basicdata.code }}</span></p>
+
+    <div class="imgbar">
+        <div>
+            <p>营业执照</p>
+            <img src={{ basicdata.license}}>
+        </div>
+        <div>
+            <p>税务登记证</p>
+            <img src={{ basicdata.taxregist}}>
+        </div>
+        <div>
+            <!-- 数据库是companyCredit -->
+            <p>公司征信查询授权书</p>
+            <!-- <img src={{ basicdata.companyright}}> -->
+            <img src={{ basicdata.companyright }}>
+        </div>
+
+    </div>
+    <div class="imgbar">
+        <div>
+            <p>公司缴税完税凭证</p>
+            <img src={{ financedata.companycredit }}>
+        </div>
+        <div>
+            <p>个人征信授权书</p>
+            <img src={{ legaldata.personright}}>
+        </div>
+    </div>
+
+    <div class="mainbar_a">
+        <h4>审批资料</h4>
+        <p>
+            <span>公司财务报表:</span>
+            <a href={{ financedata.license }} download="公司财务报表.txt">点此下载</a>
+        </p>
+
+        <p> <span>资产负债明细表:</span>
+            <a href={{ financedata.assests }} download="资产负债明细表.txt">点此下载</a>
+
+        <p> <span>采购合同:</span>
+            <a href={{ elsedata.loanfor }}  download="采购合同.txt">点此下载</a>
+
+        <p> <span>企业类担保人资料:</span>
+            <a href={{ elsedata.guarantor}}  download="企业类担保人资料.txt">点此下载</a>
+
+        <p> <span>自然人担保人资料:</span>
+            <a href={{ elsedata.natural}} download="自然人担保人资料.txt">点此下载</a>
+
+    </div>
+    <div class="btn_bar">
+        <button type="button" class="btn btn-primary" id="Approved_btn">审批通过</button>
+        <button type="button" class="btn btn-light" id="Approved_no_btn">审批不通过</button>
+    </div>
+
+</div>
+<script type="text/javascript" src="{% static 'loanApprovalDetails/loanApprovalDetails.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->
+{% endblock %}

@@ -1,0 +1,183 @@
+{# page:管理端侧边栏模板 #}
+{# author:chencc #}
+
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'sidebar/sidebar.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'alert/xcConfirm.css' %}">
+    <link rel="icon" href="../static/image/piggy_bank.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'alert/xcConfirm.js' %}"></script>
+    <style type="text/css">
+        .xcConfirm .popBox .txtBox .bigIcon {
+            background-image: url({% static 'image/icons.png' %});
+            background-repeat: no-repeat;
+            background-position: 48px 0;
+        }
+
+        .xcConfirm .popBox .ttBox .clsBtn {
+            background: url({% static 'image/icons.png' %}) -48px -96px no-repeat;
+        }
+
+    </style>
+    {% block header %}{% endblock %}
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="logo-text" style="width: 50px;margin-left: 60px">
+                            <img src="{% static 'image/logo.png' %}" alt="" style="width: 45px">
+                        </span>
+                    </a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- Search -->
+                    <h3 style="color: aliceblue">高庄效贷 </h3>
+                    <!-- Right side toggle and nav items -->
+                    <h5 style="color: aliceblue;margin-left: 20px"> 让企业贷款更简单</h5>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" style="margin-left: 20px">
+                        <!-- User Profile-->
+                        <li>
+                            <!-- User Profile-->
+                            <div class="user-profile d-flex no-block dropdown m-t-20">
+                                <div class="user-pic"><img src="{% static 'image/piggy_bank.ico' %}" alt="users"
+                                        class="rounded-circle" width="40" /></div>
+                                <div class="user-content hide-menu m-l-10">
+                                    <a href="javascript:void(0)" class="" id="Userdd" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <h5 class="m-b-0 user-name font-medium">Steave Jobs <i
+                                                class="fa fa-angle-down"></i></h5>
+                                        <span class="op-5 user-email">varun@gmail.com</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
+                                        <a class="dropdown-item" href="javascript:void(0)"><i
+                                                class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="javascript:void(0)"><i
+                                                class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="javascript:void(0)">
+                                            <button type="button" class="btn "id="out_btn">Logout</button>
+                                            <!-- <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End User Profile-->
+                        </li>
+                        <!-- User Profile-->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/loanManage/"
+                                aria-expanded="false">
+                                <i class="fa fa-money"></i>
+                                <span class="hide-menu" id="loanManage">贷款管理</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/loanApproval/"
+                                aria-expanded="false">
+                                <i class="fa fa-check"></i>
+                                <span class="hide-menu" id="loanApproval">贷款审批</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/personnelManage/"
+                                aria-expanded="false">
+                                <i class="fa fa-street-view"></i>
+                                <span class="hide-menu" id="personnelManage">人员管理</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+
+        <div class="page-wrapper">
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-5">
+                        <h4 class="page-title">{% block BasicTable %}{% endblock %}</h4>
+                        <!-- <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">
+                                            <i class="fa fa-home"></i>Home</a></li>
+                                    <li class="breadcrumb-item active">Library</li>
+                                </ol>
+                            </nav>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">{% block DefaultTable %}{% endblock %}</h4>
+                                <h6 class="card-subtitle">{% block DefaultTableText %}{% endblock %}</h6>
+                                {% block content %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<footer class="footer text-center">
+    <span class="footer1">高庄效贷 | 联系我们 | 服务条款 | 论坛 | 帮助</span>
+    <br>
+    <span>copyright @ 2019 高庄银行</span>
+</footer>
+
+<script type="text/javascript" src="{% static 'sidebar/sidebar.js' %}"></script>
+
+</html>

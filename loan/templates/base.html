@@ -1,0 +1,136 @@
+{# page:基本模板 #}
+{# author:chencc #}
+
+{% load static %}
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="../static/alert/xcConfirm.css">
+    <link rel="icon" href="../static/image/piggy_bank.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'alert/xcConfirm.js' %}"></script>
+    {% block header %}{% endblock %}
+    <style type="text/css">
+        .xcConfirm .popBox .txtBox .bigIcon {
+            background-image: url({% static 'image/icons.png' %});
+            background-repeat: no-repeat;
+            background-position: 48px 0;
+        }
+
+        .xcConfirm .popBox .ttBox .clsBtn {
+            background: url({% static 'image/icons.png' %}) -48px -96px no-repeat;
+        }
+
+        .dropdown-toggle::after {
+            opacity: 0;
+        }
+
+        .btn{
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="logo" href="index.html">
+            <img src="{% static 'image/logo.png' %}" alt="高庄效贷" class="logo">
+        </a>
+        <span class="title"> | 让信用贷款更简单</span>
+        <div class="rightlink">
+            <a class="nav-link link" id="index" href="/home/">首页</a>
+            <a class="nav-link link" id="loan" href="/loans/">高庄效贷</a>
+            <a class="nav-link link" id="myloan" href="/myLoan/">我的贷款</a>
+            <a class="nav-link link" id="aboutus" href="/aboutus/">关于我们</a>
+            <!-- 二者选择 -->
+            <!-- <div id="login_or_personal"></div> -->
+            {% if  login == 0 %}
+
+            <div class="btn" id="login"><a href="/login/">登录</a> | <a href="/register/">注册</a></div>
+
+            {% elif login == 1 %}
+            <div class="dropdown" style="text-align:center">
+                <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+                    <li style=" list-style: none;"><i class="fa fa-usd fa-user-circle-o fa-2x"></i></li>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"
+                    style="text-align:center;line-height:40px;margin-left: -80px;">
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="/myLoan/"
+                            style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">我的贷款</a>
+                    </li>
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="/certification/"
+                            style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">企业认证</a>
+                    </li>
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="/personal/"
+                            style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">设置</a>
+                    </li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation">
+                        <!-- <form role="menuitem" tabindex="-1" href="#"style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">退出登录</form> -->
+                        <form class="inline-form" >
+                            <input class="btn" type="button" name="loginOut" value="退出登录"id="out_btn">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            {% elif  msg.login == 0 %}
+
+                <div class="btn" id="login"><a href="/login/">登录</a> | <a href="/register/">注册</a></div>
+
+            {% elif msg.login == 1 %}
+                <div class="dropdown" style="text-align:center">
+                    <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+                        <li style=" list-style: none;"><i class="fa fa-usd fa-user-circle-o fa-2x"></i></li>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"
+                        style="text-align:center;line-height:40px;margin-left: -80px;">
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="/myLoan/"
+                               style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">我的贷款</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="/certification/"
+                               style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">企业认证</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="/personal/"
+                               style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">设置</a>
+                        </li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation">
+                            <!-- <form role="menuitem" tabindex="-1" href="#"style=" cursor:pointer;text-decoration: none;color: rgb(70, 70, 70);">退出登录</form> -->
+                            <form class="inline-form" >
+                                <input class="btn" type="button" name="loginOut" value="退出登录"id="out_btn">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+            {% endif %}
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+
+<footer>
+    <span class="footer1">高庄效贷 | 联系我们 | 服务条款 | 论坛 | 帮助</span>
+    <br>
+    <span>copyright @ 2019 高庄银行</span>
+</footer>
+
+<script type="text/javascript" src="{% static 'base.js' %}"></script>
+
+</html>

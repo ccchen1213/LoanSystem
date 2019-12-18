@@ -1,0 +1,148 @@
+{# page:贷款详情页面可新增 #}
+{# author:syn #}
+
+{% extends "admin/sidebar.html" %}
+{% load static %}
+<!--预先加载基本模板-->
+
+{% block title %}【高庄银行】我的贷款{% endblock %}
+{% block BasicTable %}贷款详情新增{% endblock %}
+<!--填充title模块-->
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'loanDetails2/loanDetails2.css' %}" />
+<script src="//cdn.ckeditor.com/4.12.1/full/ckeditor.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<style>
+      #loanManage{
+        color:rgb(33, 86, 233);
+    }
+    .btn-info {
+        background-color: rgb(131, 174, 255);
+        border: none;
+        width: 200px;
+        border-radius: 40px;
+        margin-left: 190px;
+    }
+
+    /* #cke_loanRich1{
+        width: 800px;
+        height: 400px;
+    } */
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainbar">
+        <p id="info"></p>
+    <form class="form-horizontal" role="form">
+        {% csrf_token %}
+        <div class="mainbar_input">
+            <div>
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-3 control-label">编号</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="num" placeholder="请输入编号" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-3 control-label">贷款产品</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="name" placeholder="请输入贷款产品"
+                            value="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-3 control-label">贷款额度</label>
+                    <div class="col-sm-6" style="display:flex;flex-direction:row">
+                        <input type="text" class="form-control" id="quota_min" value="">-
+                        <input type="text" class="form-control" id="quota_max" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-3 control-label">贷款期限</label>
+                    <div class="col-sm-6"style="display:flex;flex-direction:row">
+                            <input type="text" class="form-control" id="time_min" value="">-
+                            <input type="text" class="form-control" id="time_max" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-3 control-label">利率</label>
+                    <div class="col-sm-6"style="display:flex;flex-direction:row">
+                            <input type="text" class="form-control" id="rate_min" value="">-
+                            <input type="text" class="form-control" id="rate_max" value="">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-5 control-label">还款付息方式</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="way" placeholder="请输入还款付息方式"
+                            value="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-5 control-label">简介</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="introduction" placeholder="请输入简介"
+                            value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-5 control-label">费用说明</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fee" placeholder="请输入费用说明"
+                            value="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-5 control-label">还款说明</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="repayment" placeholder="请输入还款说明"
+                            value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mainbar_textarea">
+            <textarea class="ckeditor" cols="80" id="loanRich1" rows="10" name="content"></textarea>
+            <textarea class="ckeditor" cols="80" id="loanRich2" rows="10" name="content"></textarea>
+            <textarea class="ckeditor" cols="80" id="loanRich3" rows="10" name="content"></textarea>
+        </div>
+        <button type="button"class="btn btn-info" style="margin-left:500px; opacity: 1;margin-top:20px"
+        id="add_btn">提交新增</button>
+    </form>
+
+    <!-- <form>
+    <div class="mainbar_textarea">
+        <div>
+            <span>详细描述</span>
+            <textarea value="{{credit.detail | safe}}"></textarea>
+        </div>
+        <div>
+            <span>申请条件</span>
+            <textarea class="textArea" value="{{credit.condition | safe}}"></textarea>
+        </div>
+
+        <div>
+            <span>所需材料</span>
+            <textarea value="{{credit.material | safe}}"></textarea>
+        </div>
+        <button type="button" class="btn btn-info" style="margin-left:100px; opacity: 1;margin-top:20px"
+            id="edit_btn">提交</button>
+    </div>
+</form> -->
+</div>
+
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript" src="{% static 'loanDetails2/loanDetails2.js' %}"></script>
+{% endblock %}
