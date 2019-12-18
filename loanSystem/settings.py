@@ -131,10 +131,12 @@ STATIC_ROOT = 'static'
 STATICFILE_DIRS = [os.path.join(BASE_DIR, '/static/')]
 
 
+#邮箱配置
 EMAIL_HOST = 'smtp.qq.com'
-EMAIL_PORT = 25
-EMAIL_HOST_USER = '413469406@qq.com' # 你的 QQ 账号
+EMAIL_PORT = 465
+EMAIL_HOST_USER = '413469406@qq.com'  # 你的 QQ 账号
 EMAIL_HOST_PASSWORD = 'gkgcapcopbajcbcg'
-EMAIL_USE_TLS = True # 这里必须是 True，否则发送不成功
-EMAIL_FROM = '413469406@qq.com' # 你的 QQ 账号
+EMAIL_USE_SSL = True   #打开ssl协议
+EMAIL_USE_TLS = True  # 这里必须是 True，否则发送不成功
+EMAIL_FROM = '413469406@qq.com'  # 你的 QQ 账号
 

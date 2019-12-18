@@ -2,20 +2,17 @@ from django.shortcuts import render
 from django.utils.timezone import now
 from django.views.decorators import csrf
 from django.shortcuts import redirect  # 重新定向模块
-import re
-
 from loanSystem import settings
 from . import models
 from . import creditCode
-# from . import creditModel
+from . import creditModel
 from django.core.mail import send_mail
 import random
 import json
 from django.http import HttpResponse
 import os
+import re
 
-
-# Create your views here.
 
 # 客户端登录
 def login(request):
@@ -57,6 +54,7 @@ def company(request):
         msg["login"] = 1
     return render(request, 'user/aboutus/company.html', msg)
 
+
 # 客户端服务
 def service(request):
     msg = {}
@@ -65,6 +63,7 @@ def service(request):
     else:
         msg["login"] = 1
     return render(request, 'user/aboutus/service.html', msg)
+
 
 # 客户端首页
 def home(request):
@@ -85,7 +84,6 @@ def loans(request):
         msg["login"] = 1
     credit = models.Credit.objects.all()
     mortgage = models.Mortgage.objects.all()
-    # print(credit[1].monthmin)
     return render(request, 'user/loans/loans.html',
                   {'credit': credit,
                    'mortgage': mortgage,
@@ -102,16 +100,15 @@ def apply(request):
         msg["login"] = 1
     #     通过id获得相关贷款产品信息
     credit = models.Credit.objects.filter(id=request.GET['id'])
-    print(credit)
-    for x in credit:
-        print(x.detail)
     return render(request, 'user/apply/apply.html',
                   {'credit': credit[0],
                    "msg": msg})
 
+
 # 客户端注册
 def register(request):
     return render(request, 'user/register/register.html')
+
 
 # 客户端认证
 def certification(request):
@@ -136,6 +133,7 @@ def myLoan(request):
         myloan = models.Myloan.objects.all()
         return render(request, 'user/myLoan/myLoan.html', {'myloan': myloan, 'msg': msg})
 
+
 # 客户端个人中心
 def personal(request):
     msg = {}
@@ -155,29 +153,33 @@ def loanManage(request):
         credit = models.Credit.objects.filter(name=request.POST['search_name'])
     return render(request, 'admin/loanManage/loanManage.html', {'credit': credit})
 
+
 # 后台贷款编辑详情
 def loanDetails(request):
     credit = models.Credit.objects.filter(name=request.GET['id'])
-    print(credit)
-    for x in credit:
-        print(x.detail)
     return render(request, 'admin/loanDetails/loanDetails.html', {'credit': credit[0]})
+
 
 # 后台贷款新增详情
 def loanDetails2(request):
     return render(request, 'admin/loanDetails2/loanDetails2.html')
 
+
 # 后台登录
 def backstageLogin(request):
     return render(request, 'admin/backstageLogin/backstageLogin.html')
+
 
 # 后台审批
 def loanApproval(request):
     return render(request, 'admin/loanApproval/loanApproval.html')
 
+
+#我的贷款
 def loanApprovalDatas(request):
     myloan = models.Myloan.objects.all()
     return HttpResponse(myloan, status=200)
+
 
 # 后台审批详情
 def loanApprovalDetails(request):
@@ -193,21 +195,25 @@ def loanApprovalDetails(request):
         'elsedata': elsedata[0],
     })
 
+
 # 后台个人管理
 def personnelManage(request):
     customer = models.Customer.objects.all()
     return render(request, 'admin/personnelManage/personnelManage.html', {'customer': customer})
+
 
 # 个人编辑
 def personnelEdit(request):
     customer = models.Customer.objects.filter(cname=request.GET['id'])
     return render(request, 'admin/personnelEdit/personnelEdit.html', {'customer': customer[0]})
 
+
 # 个人新增
 def personnelAdd(request):
     return render(request, 'admin/personnelAdd/personnelAdd.html')
 
 
+#企业认证
 def certify(request):
     return render(request, 'user/certify/certify.html')
 
@@ -223,6 +229,7 @@ def applyForm(request):
         return render(request, 'user/apply/applyForm.html', msg)
 
 
+#生成随机验证码
 def code():
     code = ""
     while len(code) < 5:
@@ -230,13 +237,17 @@ def code():
     return code
 
 
+#邮箱配置
 EMAIL_HOST = 'smtp.qq.com'
-EMAIL_PORT = 25
+EMAIL_PORT = 465
 EMAIL_HOST_USER = '413469406@qq.com'  # 你的 QQ 账号
 EMAIL_HOST_PASSWORD = 'gkgcapcopbajcbcg'
+EMAIL_USE_SSL = True   #打开ssl协议
 EMAIL_USE_TLS = True  # 这里必须是 True，否则发送不成功
 EMAIL_FROM = '413469406@qq.com'  # 你的 QQ 账号
 
+
+#邮箱回传的状态码
 EMAIL_FALSE = 0
 EMAIL_TRUE = 1
 
@@ -279,7 +290,6 @@ def signupPost(request):
             add = models.Customer(email=request.POST['phone_email'], cname=request.POST['username'],
                                   idcard=request.POST['idCard'], phone=request.POST['phone'])
             add.save()
-            # models.Customer.objects.create(id=null,email=request.email_text,idcard=request.idCard,phone=request.phone)
             return redirect('loan:login')
 
 
@@ -294,12 +304,27 @@ def loginPost(request):
         if not models.Customer.objects.filter(email=request.POST['phone_email']):
             ctx["msg"] = "用户不存在"
             return render(request, "user/login/login.html", ctx)
-        # if not request.POST['password'] == request.session["code"]:
-        #     ctx["msg"] = "验证码不正确"
-        #     return render(request, "user/login/login.html", ctx)
+        if not request.POST['password'] == request.session["code"]:
+            ctx["msg"] = "验证码不正确"
+            return render(request, "user/login/login.html", ctx)
         else:
             request.session["user"] = request.POST['phone_email']
             return redirect('loan:home')
+
+
+# 信用评价提交
+def creditRankPost(request):
+    msg = {}
+    if not request.session.get("user"):
+        msg["login"] = 0
+        return redirect('loan:login')
+    else:
+        msg["login"] = 1
+    if request.POST:
+        customer = models.Customer.objects.get(email=request.session["user"])
+        customer.rank = 1
+        customer.save()
+        return redirect('loan:credit')
 
 
 # 修改邮箱
@@ -321,7 +346,7 @@ def personalPost(request):
             return render(request, 'user/personal/personal.html')
 
 
-# 企业认证
+#企业认证回传的状态码
 COMPANY_NAME_FALSE = 0
 CREDIT_ID_FALSE = 1
 LEGAL_NAME_FALSE = 2
@@ -332,6 +357,7 @@ SQL_FAL = 6
 SQL_TU = 7
 
 
+# 企业认证
 def sendCertification(request):
     request.encoding = 'utf-8'
     msg = {}
@@ -364,7 +390,6 @@ def sendCertification(request):
             user.legal_id = request.POST['Legal_representative_id']
             user.card = request.POST['Legal_representative_card']
             user.bank_phone = request.POST['Bank_phone']
-            # user.save()
 
             if user.save():
                 return HttpResponse(SQL_FAL, status=200)
@@ -372,6 +397,7 @@ def sendCertification(request):
                 return HttpResponse(SQL_TU, status=200)
 
 
+#贷款提交的状态吗
 APPLY_FIRST_FAIL = 0
 APPLY_FIRST_TRUE = 1
 
@@ -389,8 +415,18 @@ def applyFirst(request):
             return HttpResponse(APPLY_FIRST_FAIL, status=200)
 
 
-def send(request):
-    os.system("python lastmodel.py")
+# 信用评级
+def credit(request):
+    msg = {}
+    if not request.session.get("user"):
+        msg["login"] = 0
+        return redirect('loan:login')
+    else:
+        msg["login"] = 1
+        customer = models.Customer.objects.filter(email=request.session["user"])
+        msg['code'] = customer[0].rank
+        return render(request, 'user/personal/credit.html', msg)
+
 
 #人员删除
 def personnelDelPost(request):
@@ -399,6 +435,8 @@ def personnelDelPost(request):
     else:
         return HttpResponse(SQL_FALSE, status=200)
 
+
+#模板
 def sidebar(request):
     request.encoding = 'utf-8'
     return render(request, 'admin/sidebar.html')
@@ -416,6 +454,8 @@ def page_error(request):
 def page_not_found(request):
     return render(request, 'errorPages/404.html', status=404)
 
+
+#上传文件回传状态码
 GET_FILE_FAIL = 0
 GET_FILE_TRUE = 1
 
@@ -425,6 +465,8 @@ def applyFiles(request):
     request.encoding = 'utf-8'
     return HttpResponse(GET_FILE_TRUE)
 
+
+#数据库回传的状态码
 SQL_FALSE = 0
 SQL_TURE = 1
 
@@ -460,6 +502,7 @@ def backLogoutPost(request):
         request.session.flush()
         return HttpResponse(1, status=200)
 
+
 # 贷款详情新增
 def addloanPost(request):
     request.encoding = 'utf-8'
@@ -468,14 +511,14 @@ def addloanPost(request):
                             else_field=request.POST['fee'], advance=request.POST['repayment'],
                             info=request.POST['introduction'], condition=request.POST['condition'],
                             material=request.POST['material'],
-                            amountmin=request.POST['quota_min'], amountmax=request.POST[
-                'quota_max'], monthmin=request.POST['time_min'],
+                            amountmin=request.POST['quota_min'], amountmax=request.POST['quota_max'], monthmin=request.POST['time_min'],
                             monthmax=request.POST['time_max'], monthirmin=request.POST['rate_min'],
                             monthirmax=request.POST['rate_max'])
         if add.save():
             return HttpResponse(SQL_FALSE, status=200)
         else:
             return HttpResponse(SQL_TURE, status=200)
+
 
 # 人员详情编辑
 def personnelEditPost(request):
@@ -491,6 +534,7 @@ def personnelEditPost(request):
         else:
             return HttpResponse(SQL_TURE, status=200)
 
+
 # 人员详情新增
 def personnelAddPost(request):
     request.encoding = 'utf-8'
@@ -503,11 +547,13 @@ def personnelAddPost(request):
         else:
             return HttpResponse(SQL_TURE, status=200)
 
+
 # 客户端退出登录
 def logoutPost(request):
     if request.POST:
         request.session.flush()
         return HttpResponse(1, status=200)
+
 
 # 管理员登录
 def backPost(request):
@@ -517,6 +563,7 @@ def backPost(request):
         else:
             request.session["admin"] = request.POST['phone']
             return HttpResponse(1, status=200)
+
 
 # 贷款审批页提交
 def loanPost(request):
@@ -528,31 +575,3 @@ def loanPost(request):
         else:
             return HttpResponse(SQL_TURE, status=200)
 
-
-# 信用评级
-def credit(request):
-    msg = {}
-    if not request.session.get("user"):
-        msg["login"] = 0
-        return redirect('loan:login')
-    else:
-        msg["login"] = 1
-        customer = models.Customer.objects.filter(email=request.session["user"])
-        msg['code'] = customer[0].rank
-        # return render(request, 'user/personal/credit.html', {'msg':msg,'customer':customer[0]})
-        return render(request, 'user/personal/credit.html', msg)
-
-
-# 信用评价提交
-def creditRankPost(request):
-    msg = {}
-    if not request.session.get("user"):
-        msg["login"] = 0
-        return redirect('loan:login')
-    else:
-        msg["login"] = 1
-    if request.POST:
-        customer = models.Customer.objects.get(email=request.session["user"])
-        customer.rank = 1
-        customer.save()
-        return redirect('loan:credit')
