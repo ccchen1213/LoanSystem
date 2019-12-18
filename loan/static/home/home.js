@@ -1,13 +1,13 @@
-/**
- * Created by changwang.song on 2017/12/26.
- */
-let money=0;
+let money = 0;
 
+// 进度条
 function extend(obj1, obj2) {
     for (var attr in obj2) {
         obj1[attr] = obj2[attr];
     }
 }
+
+// 每一步选中的操作
 function SetStep(arg) {
     this.body = document.body;
     this.opt = {
@@ -19,18 +19,17 @@ function SetStep(arg) {
         nextBtn: '.nextBtn',
         prevBtn: '.prevBtn',
         steps: ['1W', '25W', '50W', '75W', '100W'],
-        //pageClass:'',//分页的类或则id
         stepCounts: 3,//总共的步骤数
         curStep: 1,//当前显示第几页
         animating: false,
         showBtn: true,//是否生成上一步下一步操作按钮
         clickAble: true,//是否可以通过点击进度条的节点操作进度
         onLoad: function () {
-
         }
     }
     this.init(arg)
 }
+
 //初始化 生成页面的进度条和按钮
 SetStep.prototype.init = function (arg) {
     var _that = this;
@@ -52,6 +51,8 @@ SetStep.prototype.init = function (arg) {
         "<button type='button' class='btn btn-default nextBtn' id='nextBtn' class='nextBtn'>下一步</button></div>");
     stepP.css('width', w_li * 2 * (this.opt.stepCounts - 1));
     stepP.find('.ystep-progress-bar').css('width', w_li * 2 * (this.opt.stepCounts - 1))
+
+    //小圆
     for (var i = 0; i < this.opt.stepCounts; i++) {
         if (i == 0) {
             var _s = $(stepDisc).text(this.opt.steps[i]).addClass('')
@@ -61,19 +62,21 @@ SetStep.prototype.init = function (arg) {
         }
         stepsHtml.append(_s);
     }
+    // 每一步
     stepsHtml.find('li').css('width', '40px').css('marginRight', w_li * 2 - 40)
     stepContainer.append(stepsHtml).append(stepP);
-
     stepContainer.css('left', (w_con - stepP.width() - this.opt.imgWidth - 10 - this.opt.stepContainerMar * 2) / 2)
     this.content.css('overflow', 'hidden')
     this.setProgress(this.stepContainer, this.opt.curStep, this.opt.stepCounts)
+
     //判断参数 是否显示按钮 并绑定点击事件
     if (this.opt.showBtn) {
         this.content.append(stepButtonHtml)
         this.prevBtn = this.content.find(this.opt.prevBtn)
         this.nextBtn = this.content.find(this.opt.nextBtn)
+
+        // 点击小圆之后
         this.prevBtn.on('click', function () {
-            // if($(this).hasClass('handleAble')){
             if ($(_that).attr('disabled') || _that.opt.animating) {
                 return false;
             } else {
@@ -82,8 +85,9 @@ SetStep.prototype.init = function (arg) {
                 _that.setProgress(_that.stepContainer, _that.opt.curStep, _that.opt.stepCounts)
             }
         })
+
+        // 点击后一个小圆之后
         this.nextBtn.on('click', function () {
-            // if($(this).hasClass('handleAble')){
             if ($(_that).attr('disabled') || _that.opt.animating) {
                 return false;
             } else {
@@ -93,6 +97,7 @@ SetStep.prototype.init = function (arg) {
             }
         })
     }
+
     //判断时候可点击进度条 并绑定点击事件
     if (this.opt.clickAble) {
         stepsHtml.find('li').on('click', function () {
@@ -100,6 +105,8 @@ SetStep.prototype.init = function (arg) {
             _that.setProgress(_that.stepContainer, _that.opt.curStep, _that.opt.stepCounts)
         })
     }
+
+    // 进度条
     $(window).resize(function () {
         var w_con = $(_that.content).width();
         var w_li = w_con / _that.opt.stepCounts / 2;
@@ -109,6 +116,7 @@ SetStep.prototype.init = function (arg) {
         stepContainer.css('left', (w_con - stepP.width() - _that.opt.imgWidth - 10 - _that.opt.stepContainerMar * 2) / 2)
     })
 }
+
 //设置进度条
 SetStep.prototype.setProgress = function (n, curIndex, stepsLen) {
     var _that = this;
@@ -135,8 +143,8 @@ SetStep.prototype.setProgress = function (n, curIndex, stepsLen) {
                         _$m.attr("class", "ystep-step-active");
                         console.log(_j);
                         //计算器
-                       $(".time_btn").click = calculate(_j);
-                       money=_j;
+                        $(".time_btn").click = calculate(_j);
+                        money = _j;
 
                     } else if (_j > curIndex) {
                         _$m.attr("class", "ystep-step-undone");
@@ -172,6 +180,8 @@ SetStep.prototype.checkPage = function (pageCont, curStep, steps) {
         }
     }
 }
+
+//进度条选择之后的样式
 var step1 = new SetStep({
     content: '.stepCont1',
     showBtn: false,
@@ -193,74 +203,56 @@ function dj(dom) {
     $(dom).addClass("shining");
 }
 $(".time_btn").click = dj(this);
-// });
-
-// $("#three").click(function () {
-//     return 3
-// })
-// $("#six").click(function () {
-//     var month_value = $("#six").val();
-//     return month_value;
-// })
-// $("#nine").click(function () {
-//     var month_value = $("#nine").val();
-//     return month_value;
-// })
-// $("#twelve").click(function () {
-//     var month_value = $("#twelve").val();
-//     return month_value;
-// })
-
-
-// $("#twelve").click()=month3();
-// var interest
 var cost;//成本
 var interest;//利息
 var Total_repayment;//还款总额
 
+// 计算函数
 function calculate(j_value) {
-
-    if(j_value==1){
-        cost=10000
+    if (j_value == 1) {
+        cost = 10000
     }
-    else{
+    else {
         cost = (j_value - 1) * 250000
     }
-    
-    $("#three").click(function(){
-        interest= cost * 0.0055 * 3;
+
+    // 三月点击
+    $("#three").click(function () {
+        interest = cost * 0.0055 * 3;
         Total_repayment = cost + interest;
         $("#cost").html(cost);
         $("#interest").html(interest);
         $("#Total_repayment").html(Total_repayment);
     });
-    
-    $("#six").click(function(){
-        interest= cost * 0.0055 * 6;
+
+    // 六月点击
+    $("#six").click(function () {
+        interest = cost * 0.0055 * 6;
         Total_repayment = cost + interest;
         $("#cost").html(cost);
         $("#interest").html(interest);
         $("#Total_repayment").html(Total_repayment);
-       
+
     });
-    $("#nine").click(function(){
-        interest= cost * 0.0055 * 9;
+
+    // 九月点击
+    $("#nine").click(function () {
+        interest = cost * 0.0055 * 9;
         Total_repayment = cost + interest;
         $("#cost").html(cost);
         $("#interest").html(interest);
         $("#Total_repayment").html(Total_repayment);
-        
+
     });
-    $("#twelve").click(function(){
-        interest= cost * 0.0055 * 12;
+
+    // 十二月点击
+    $("#twelve").click(function () {
+        interest = cost * 0.0055 * 12;
         Total_repayment = cost + interest;
         $("#cost").html(cost);
         $("#interest").html(interest);
         $("#Total_repayment").html(Total_repayment);
     });
-    // $("#cost").html(cost);
-    // $("#interest").html(interest);
-    // $("#Total_repayment").html(Total_repayment);
 }
 
 

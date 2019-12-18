@@ -1,9 +1,9 @@
+//获取
 var $email_text = $("#email_text");
 var $idCard = $("#idCard");
 var $phone = $("#phone");
 var $objInfo = $("#info");
 var $username = $("#username");
-// 注册按钮
 var $btn_register = $("#btn_register");
 
 //邮箱的校验
@@ -36,7 +36,6 @@ function isCorrectUsername(s) {
 
 //邮箱输入信息校验
 $email_text.blur(function () {
-    // console.log("1");
     var $email_text_info = $email_text.val();
     if (isCorrectEmail_text($email_text_info)) {
         $objInfo.html("邮箱格式输入正确").css("color", "green");
@@ -49,7 +48,6 @@ $email_text.blur(function () {
 
 //身份证输入信息校验
 $idCard.blur(function () {
-    // console.log("1");
     var $idCard_info = $idCard.val();
     if (isCorrectIdCard($idCard_info)) {
         $objInfo.html("身份证格式输入正确").css("color", "green");
@@ -61,7 +59,6 @@ $idCard.blur(function () {
 
 //手机号码输入信息校验
 $phone.blur(function () {
-    // console.log("1");
     var $phone_info = $phone.val();
     if (isCorrectPhone($phone_info)) {
         $objInfo.html("手机号码格式输入正确").css("color", "green");
@@ -73,7 +70,6 @@ $phone.blur(function () {
 
 //手机号码输入信息校验
 $username.blur(function () {
-    // console.log("1");
     var $username_info = $username.val();
     if (isCorrectUsername($username_info)) {
         $objInfo.html("姓名格式输入正确").css("color", "green");
@@ -83,7 +79,10 @@ $username.blur(function () {
     }
 });
 
+//注册按钮点击事件
 $("#btn").click(function () {
+
+    //错误提示
     if (!isCorrectEmail_text($("#email_text").val())) {
         let txt = "邮件格式错误";
         window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
@@ -91,15 +90,17 @@ $("#btn").click(function () {
             window.location.reload();
         });
 
-    } else {
+    }
+    //传值
+    else {
         data = {}
         data.email = $("#email_text").val();
-        console.log($("#email_text").val());
         $.ajaxSetup({
             data: {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
+
         $.post("http://127.0.0.1:8000/sendMail/", data, function (data) {
             if (data == '0') {
                 let txt = "邮件发送失败";
@@ -107,12 +108,12 @@ $("#btn").click(function () {
                 $('.ok').click(function () {
                     window.location.reload();
                 });
-
             }
         })
     }
 })
 
+//倒计时
 $('#btn').click(function () {
     var count = 30;
     var countdown = setInterval(CountDown, 500);

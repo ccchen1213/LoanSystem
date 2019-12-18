@@ -1,9 +1,10 @@
+// 样式修改
 var $loan_status=jQuery(".loan_status").text();
-console.log($loan_status)
 if($loan_status=="正在审核"){
     jQuery(".loan_status").css("color","red");
 }
 
+//获取
 var $money=$("#money").text();
 var $interest_rate=$("#interest_rate").text();
 var $time=$("#time").text();

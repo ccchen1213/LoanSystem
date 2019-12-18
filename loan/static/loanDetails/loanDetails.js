@@ -1,15 +1,12 @@
+//获取变量
 var $num = $("#num");
 var $name = $("#name");
-
 var $quota_min = $("#quota_min")
 var $quota_max = $("#quota_max")
 var $time_min = $("#time_min")
 var $time_max = $("#time_max")
 var $rate_min = $("#rate_min")
 var $rate_max = $("#rate_max")
-// var $quota = $("#quota");
-// var $time = $("#time");
-// var $rate = $("#rate");
 var $way = $("#way");
 var $introduction = $("#introduction");
 var $fee = $("#fee");
@@ -19,15 +16,12 @@ var $condition = $("#condition");
 var $material = $("#material");
 var $objInfo = $("#info");
 
+//正则
 var $re1 = /^[0-9]*$/;//验证数字
 var $re2 = /^[0-9a-zA-Z\u4e00-\u9fa5]+$///中文英文数字
 var $re3 = /[\u4e00-\u9fa5]///纯中文
 var $re4 = /\d+-?\d*///数字加-
 var $re5 = /^((\d+\.?\d*)|(\d*\.\d+))\%$///数字加- %
-
-// $('#rich_text1').load('../../templates/admin/loanDetails/loanRich1.html');
-// $('#rich_text2').load('../../templates/admin/loanDetails/loanRich2.html');
-// $('#rich_text3').load('../../templates/admin/loanDetails/loanRich3.html');
 
 //贷款编号输入信息校验
 $num.blur(function () {
@@ -59,6 +53,7 @@ $quota_min.blur(function () {
     }
 });
 
+// 贷款额度输入信息校验
 $quota_max.blur(function () {
     if ($re1.test($quota_max.val())) {
         $objInfo.html("贷款额度最大值格式输入正确").css("color", "green");
@@ -68,7 +63,7 @@ $quota_max.blur(function () {
     }
 });
 
-// //贷款期限输入信息校验
+//贷款期限输入信息校验
 $time_min.blur(function () {
     if ($re1.test($time_min.val())) {
         $objInfo.html("贷款期限下限格式输入正确").css("color", "green");
@@ -78,6 +73,7 @@ $time_min.blur(function () {
     }
 });
 
+// 贷款期限输入信息校验
 $time_max.blur(function () {
     if ($re1.test($time_max.val())) {
         $objInfo.html("贷款期限上限格式输入正确").css("color", "green");
@@ -97,6 +93,7 @@ $rate_min.blur(function () {
     }
 });
 
+// 贷款利率输入信息校验
 $rate_max.blur(function () {
     if ($re5.test($rate_max.val())) {
         $objInfo.html("贷款利率上限格式输入正确").css("color", "green");
@@ -116,7 +113,6 @@ $way.blur(function () {
     }
 });
 
-
 //贷款简介输入信息校验
 $introduction.blur(function () {
     if ($re3.test($introduction.val())) {
@@ -126,7 +122,6 @@ $introduction.blur(function () {
         $introduction.focus();
     }
 });
-
 
 //贷款费用输入信息校验
 $fee.blur(function () {
@@ -148,26 +143,22 @@ $repayment.blur(function () {
     }
 });
 
-
+// 编辑按钮点击
 $("#edit_btn").click(function () {
     var $num = $("#num");
     var $name = $("#name");
-
     var $quota_min = $("#quota_min")
     var $quota_max = $("#quota_max")
     var $time_min = $("#time_min")
     var $time_max = $("#time_max")
     var $rate_min = $("#rate_min")
     var $rate_max = $("#rate_max")
-
     var $way = $("#way");
     var $introduction = $("#introduction");
     var $fee = $("#fee");
     var $repayment = $("#repayment");
-    // var $detail = $("#detail");
-    // var $condition = $("#condition");
-    // var $material = $("#material");
 
+    //错误信息提示
     if (!$re1.test($num.val()) || !$re3.test($name.val()) ||
         !$re1.test($quota_min.val()) || !$re1.test($quota_max.val()) ||
         !$re1.test($time_min.val()) || !$re1.test($time_max.val()) ||
@@ -180,8 +171,8 @@ $("#edit_btn").click(function () {
         $('.ok').click(function () {
             window.location.reload();
         });
-
     }
+    //传值
     else {
         data = {}
         data.num = $("#num").val();//编号
@@ -199,7 +190,6 @@ $("#edit_btn").click(function () {
         data.time_max = $("#time_max").val();
         data.rate_min = $("#rate_min").val();
         data.rate_max = $("#rate_max").val();
-
         data.detail = CKEDITOR.instances.loanRich1.getData();
         data.condition = CKEDITOR.instances.loanRich2.getData();
         data.material = CKEDITOR.instances.loanRich3.getData();
@@ -209,6 +199,7 @@ $("#edit_btn").click(function () {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
+
         $.post("/loanDetailsPost/", data, function (data) {
             if (data == '0') {
                 let txt = "编辑失败";
@@ -217,6 +208,7 @@ $("#edit_btn").click(function () {
                     window.location.href = "/loanDetails/";
                 });
             }
+
             else if (data == '1') {
                 let txt = "编辑成功";
                 window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
@@ -224,15 +216,13 @@ $("#edit_btn").click(function () {
                     window.location.href = "/loanManage/";
                 });
             }
+
         })
     }
 })
 
-
+//富文本编辑器
 $.getScript("//cdn.ckeditor.com/4.12.1/standard/ckeditor.js", function () {
-    // CKEDITOR.instances.loanRich1.setData({{ credit.detail }}); 
-    // CKEDITOR.instances.loanRich2.setData({{ credit.condition }}); 
-    // CKEDITOR.instances.loanRich3.setData({{ credit.material }}); 
     $("#cke_loanRich1_arialbl").html("");
     $("#cke_loanRich1_arialbl").html("详细描述");
     $("#cke_loanRich1_arialbl").css("color", "rgb(75, 130, 233)");

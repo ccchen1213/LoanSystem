@@ -14,15 +14,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'afterBase/afterBase.css' %}" />
 <style>
     .table td {
-        /* padding: 3px 4px; */
         text-align: center;
     }
-
-    /* .table th {
-        padding: 0.4rem;
-        text-align: center;
-
-    } */
 </style>
 {% endblock %}
 
@@ -33,80 +26,76 @@
 <hr>
 <!-- 侧边栏 -->
 
-    <div class="container" style="display: flex">
-        <!-- 侧边栏 -->
-        <aside class="main-sidebar">
-            <section class="sidebar">
-                <ul class="sidebar-menu">
-                    <li class="header" style="font-size:17px;color:#a1aab2">我的金融助手</li>
-                    <li><a href="/myLoan/" style="color: #007bff; font-weight: bolder"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
-                    <li class="header" style="font-size:17px;color:#a1aab2">公司资料管理</li>
-                    <li><a href="/certification/"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
-                    <li class="header" style="font-size:17px;color:#a1aab2">基本设置</li>
-                    <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
-                    <li class="header" style="font-size:17px;color:#a1aab2">个人信用</li>
-                    <li><a href="/credit/"><i class="fa fa-phone-square"></i> <span>信用评级</span></a></li>
+<div class="container" style="display: flex">
+    <!-- 侧边栏 -->
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="header" style="font-size:17px;color:#a1aab2">我的金融助手</li>
+                <li><a href="/myLoan/" style="color: #007bff; font-weight: bolder"><i class="fa fa-usd fa-lg"></i>
+                        <span>我的贷款</span></a></li>
+                <li class="header" style="font-size:17px;color:#a1aab2">公司资料管理</li>
+                <li><a href="/certification/"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
+                <li class="header" style="font-size:17px;color:#a1aab2">基本设置</li>
+                <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
+                <li class="header" style="font-size:17px;color:#a1aab2">个人信用</li>
+                <li><a href="/credit/"><i class="fa fa-phone-square"></i> <span>信用评级</span></a></li>
 
-                </ul>
-            </section>
-        </aside>
+            </ul>
+        </section>
+    </aside>
 
-        <div class="mainbar">
-            <!-- 表格 -->
-            {% load pagination_tags %}
-            {% autopaginate myloan 4 %}
-            {% for x in myloan %}
-                <div>
-                    <table class="table table-bordered">
-                        <p><strong>贷款编号：</strong>{{x.id}}</p>
-                        <thead>
-                        <tr>
-                            <td>
-                                <p>金额/万</p>
-                                <h6 id="money">{{x.money}}</h6>
-                            </td>
-                            <td>
-                                <p>申请月份</p>
-                                <h6 id="time">{{x.month}}</h6>
-                            </td>
-                            <td>
-                                <p>贷款进度</p>
-                                {% if  x.status == 0 %}
-                                    <h6 id="the_term">提交申请</h6>
-                                {% endif %}
-                                {% if  x.status == 1 %}
-                                    <h6 id="the_term">正在审核</h6>
-                                {% endif %}
-                                {% if  x.status == 2 %}
-                                    <h6 id="the_term">申请成功</h6>
-                                {% endif %}
-                                {% if  x.status == 3 %}
-                                    <h6 id="the_term">拨放贷款</h6>
-                                {% endif %}
-                                {% if  x.status == 4 %}
-                                    <h6 id="the_term">待还贷款</h6>
-                                {% endif %}
-                                {% if  x.status == 5 %}
-                                    <h6 id="the_term">还清贷款</h6>
-                                {% endif %}
-                            </td>
+    <div class="mainbar">
+        <!-- 表格 -->
+        {% load pagination_tags %}
+        {% autopaginate myloan 4 %}
+        {% for x in myloan %}
+        <div>
+            <table class="table table-bordered">
+                <p><strong>贷款编号：</strong>{{x.id}}</p>
+                <thead>
+                    <tr>
+                        <td>
+                            <p>金额/万</p>
+                            <h6 id="money">{{x.money}}</h6>
+                        </td>
+                        <td>
+                            <p>申请月份</p>
+                            <h6 id="time">{{x.month}}</h6>
+                        </td>
+                        <td>
+                            <p>贷款进度</p>
+                            {% if  x.status == 0 %}
+                            <h6 id="the_term">提交申请</h6>
+                            {% endif %}
+                            {% if  x.status == 1 %}
+                            <h6 id="the_term">正在审核</h6>
+                            {% endif %}
+                            {% if  x.status == 2 %}
+                            <h6 id="the_term">申请成功</h6>
+                            {% endif %}
+                            {% if  x.status == 3 %}
+                            <h6 id="the_term">拨放贷款</h6>
+                            {% endif %}
+                            {% if  x.status == 4 %}
+                            <h6 id="the_term">待还贷款</h6>
+                            {% endif %}
+                            {% if  x.status == 5 %}
+                            <h6 id="the_term">还清贷款</h6>
+                            {% endif %}
+                        </td>
 
-                        </tr>
-                        </thead>
-                    </table>
-
-                </div>
-            {% endfor %}
-            <div class="page" style="width: 100%;text-align: center;margin-left: 250px">
-                {% paginate %}
-            </div>
-
+                    </tr>
+                </thead>
+            </table>
         </div>
+        {% endfor %}
+        <div class="page" style="width: 100%;text-align: center;margin-left: 250px">
+            {% paginate %}
+        </div>
+
     </div>
-
-
-
-<!-- <img src="{% static 'image/lb1.jpg' %}" > -->
+</div>
 <script type="text/javascript" src="{% static 'myLoan/myLoan.js' %}"></script>
 <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script>
 <script>

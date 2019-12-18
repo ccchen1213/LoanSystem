@@ -15,7 +15,7 @@ from django.http import HttpResponse
 import os
 # Create your views here.
 
-
+# 客户端登录
 def login(request):
     msg = {}
     if not request.session.get("user"):
@@ -52,7 +52,7 @@ def company(request):
         msg["login"] = 1
     return render(request, 'user/aboutus/company.html', msg)
 
-
+# 客户端服务
 def service(request):
     msg = {}
     if not request.session.get("user"):
@@ -61,7 +61,7 @@ def service(request):
         msg["login"] = 1
     return render(request, 'user/aboutus/service.html', msg)
 
-
+# 客户端首页
 def home(request):
     msg = {}
     if not request.session.get("user"):
@@ -101,11 +101,11 @@ def apply(request):
                   {'credit': credit[0],
                    "msg": msg})
 
-
+# 客户端注册
 def register(request):
     return render(request, 'user/register/register.html')
 
-
+# 客户端认证
 def certification(request):
     msg = {}
     if not request.session.get("user"):
@@ -117,7 +117,7 @@ def certification(request):
         return render(request, 'user/certification/certification.html', {'msg':msg,
         'customer':customer})
 
-
+# 客户端我的贷款
 def myLoan(request):
     msg = {}
     if not request.session.get("user"):
@@ -128,7 +128,7 @@ def myLoan(request):
         myloan = models.Myloan.objects.all()
         return render(request, 'user/myLoan/myLoan.html',{'myloan':myloan,'msg':msg})
 
-
+# 客户端个人中心
 def personal(request):
     msg = {}
     if not request.session.get("user"):
@@ -140,14 +140,14 @@ def personal(request):
         return render(request, 'user/personal/personal.html', msg)
 
 
-# 后台的“贷款管理”
+# 后台贷款管理
 def loanManage(request):
     credit = models.Credit.objects.all()
     if request.POST:
         credit = models.Credit.objects.filter(name=request.POST['search_name'])
     return render(request, 'admin/loanManage/loanManage.html', {'credit': credit})
 
-
+# 后台贷款编辑详情
 def loanDetails(request):
     credit = models.Credit.objects.filter(name=request.GET['id'])
     print(credit)
@@ -155,24 +155,23 @@ def loanDetails(request):
         print(x.detail)
     return render(request, 'admin/loanDetails/loanDetails.html', {'credit': credit[0]})
 
-
+# 后台贷款新增详情
 def loanDetails2(request):
     return render(request, 'admin/loanDetails2/loanDetails2.html')
 
-
+# 后台登录
 def backstageLogin(request):
     return render(request, 'admin/backstageLogin/backstageLogin.html')
 
-
+# 后台审批
 def loanApproval(request):
     return render(request, 'admin/loanApproval/loanApproval.html')
-
 
 def loanApprovalDatas(request):
     myloan = models.Myloan.objects.all()
     return HttpResponse(myloan, status=200)
 
-
+# 后台审批详情
 def loanApprovalDetails(request):
     request.encoding = 'utf-8'
     basic = models.Basicdata.objects.filter(id=request.GET['id'])
@@ -186,17 +185,17 @@ def loanApprovalDetails(request):
         'elsedata': elsedata[0],
     })
 
-
+# 后台个人管理
 def personnelManage(request):
     customer = models.Customer.objects.all()
     return render(request, 'admin/personnelManage/personnelManage.html', {'customer': customer})
 
-
+# 个人编辑
 def personnelEdit(request):
     customer = models.Customer.objects.filter(cname=request.GET['id'])
     return render(request, 'admin/personnelEdit/personnelEdit.html', {'customer': customer[0]})
 
-
+# 个人新增
 def personnelAdd(request):
     return render(request, 'admin/personnelAdd/personnelAdd.html')
 
@@ -366,10 +365,6 @@ APPLY_FIRST_TRUE = 1
 # 贷款详情页的表单提交
 def applyFirst(request):
     request.encoding = 'utf-8'
-    # msg={}
-    # if not request.session.get("user"):
-    #     msg["login"]=0
-    #     return redirect('loan:login')
     if request.method == "POST":
         money = request.POST.get("applyAmount")
         month = request.POST.get("applyMonth")
@@ -383,7 +378,6 @@ def applyFirst(request):
 def send(request):
     os.system("python lastmodel.py")
 
-
 #人员删除
 def personnelDelPost(request):
     if models.Customer.objects.filter(cname=request.POST['name']).delete():
@@ -391,11 +385,9 @@ def personnelDelPost(request):
     else:
         return HttpResponse(SQL_FALSE, status=200)
 
-
 def sidebar(request):
     request.encoding = 'utf-8'
     return render(request, 'admin/sidebar.html')
-
 
 def page_error(request):
     timenow = now()
@@ -403,19 +395,15 @@ def page_error(request):
     print(timenow)
     return render(request, 'errorPages/500.html', status=500)
 
-
 def page_not_found(request):
     return render(request, 'errorPages/404.html', status=404)
-
 
 GET_FILE_FAIL = 0
 GET_FILE_TRUE = 1
 
-
 def applyFiles(request):
     request.encoding = 'utf-8'
     return HttpResponse(GET_FILE_TRUE)
-
 
 SQL_FALSE = 0
 SQL_TURE = 1
@@ -450,7 +438,6 @@ def backLogoutPost(request):
         request.session.flush()
         return HttpResponse(1, status=200)
 
-
 # 贷款详情新增
 def addloanPost(request):
     request.encoding = 'utf-8'
@@ -464,7 +451,6 @@ def addloanPost(request):
             return HttpResponse(SQL_FALSE, status=200)
         else:
             return HttpResponse(SQL_TURE, status=200)
-
 
 # 人员详情编辑
 def personnelEditPost(request):
@@ -480,7 +466,6 @@ def personnelEditPost(request):
         else:
             return HttpResponse(SQL_TURE, status=200)
 
-
 # 人员详情新增
 def personnelAddPost(request):
     request.encoding = 'utf-8'
@@ -492,13 +477,11 @@ def personnelAddPost(request):
         else:
             return HttpResponse(SQL_TURE, status=200)
 
-
-# 用户端退出登录
+# 客户端退出登录
 def logoutPost(request):
     if request.POST:
         request.session.flush()
         return HttpResponse(1, status=200)
-
 
 # 管理员登录
 def backPost(request):
@@ -508,7 +491,6 @@ def backPost(request):
         else:
             request.session["admin"] = request.POST['phone']
             return HttpResponse(1, status=200)
-
 
 # 贷款审批页提交
 def loanPost(request):
@@ -532,7 +514,6 @@ def credit(request):
         msg['code']=customer[0].rank
         # return render(request, 'user/personal/credit.html', {'msg':msg,'customer':customer[0]})
         return render(request, 'user/personal/credit.html', msg)
-
 
 #信用评价提交
 def creditRankPost(request):

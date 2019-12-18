@@ -1,26 +1,26 @@
 {# page:贷款审批 #}
 {# author:syn #}
-
 {% extends "admin/sidebar.html" %}
 {% load static %}
 <!--预先加载基本模板-->
-
 {% block title %}【高庄银行】贷款审批{% endblock %}
 {% block BasicTable %}贷款审批{% endblock %}
 <!--填充title模块-->
-
 {% block header %}
 <link rel="stylesheet" type="text/css" href="{% static 'loanApproval/loanApproval.css' %}" />
 <style>
-    #loanApproval{
-        color:rgb(33, 86, 233);
+    #loanApproval {
+        color: rgb(33, 86, 233);
     }
+
     ul a {
         color: rgb(75, 75, 75);
     }
+
     th a {
         color: rgb(75, 75, 75);
     }
+
     .table th {
         padding: 10px;
     }
@@ -52,7 +52,7 @@
 <!-- Nav tabs -->
 <div class="ulBar">
     <ul class="nav nav-pills steps" role="tablist">
-        <a  href="/loanApproval/?id=1">
+        <a href="/loanApproval/?id=1">
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="pill" href="#step0">提交申请</a>
             </li>

@@ -5,6 +5,7 @@ function isCorrectEmail_text(s) {
     return true;
 }
 
+//倒计时
 $('#btn').click(function () {
     var count = 30;
     var countdown = setInterval(CountDown, 500);
@@ -23,6 +24,7 @@ $('#btn').click(function () {
     }
 })
 
+//按钮点击
 $("#btn").click(function () {
     if (!isCorrectEmail_text($("#firstname").val())) {
         let txt = "邮件发送失败";
@@ -31,15 +33,17 @@ $("#btn").click(function () {
             window.location.reload();
         });
 
-    } else {
+    }
+
+    else {
         data = {}
         data.email = $("#firstname").val();
-        console.log($("#firstname").val());
         $.ajaxSetup({
             data: {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
+
         $.post("http://127.0.0.1:8000/sendMail/", data, function (data) {
             if (data == '0') {
                 let txt = "邮件发送失败";
@@ -47,7 +51,6 @@ $("#btn").click(function () {
                 $('.ok').click(function () {
                     window.location.reload();
                 });
-
             }
         })
     }

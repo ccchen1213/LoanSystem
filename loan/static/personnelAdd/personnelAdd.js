@@ -1,3 +1,4 @@
+//获取
 var $cname = $("#cname");
 var $idcard = $("#idcard");
 var $email = $("#email");
@@ -6,6 +7,7 @@ var $legal_name = $("#legal_name");
 var $legal_id = $("#legal_id");
 var $objInfo = $("#info");
 
+//正则
 var $re1 = /^[a-zA-Z0-9_-]{1,16}$/;//验证用户名
 var $re2 = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;//验证身份证
 var $re3 = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;//验证邮箱
@@ -70,6 +72,7 @@ $legal_id.blur(function () {
     }
 });
 
+//新增按钮点击
 $("#add_btn").click(function () {
     var $cname = $("#cname");
     var $idcard = $("#idcard");
@@ -78,17 +81,19 @@ $("#add_btn").click(function () {
     var $legal_name = $("#legal_name");
     var $legal_id = $("#legal_id");
     var $objInfo = $("#info");
+
+    //错误提示
     if (!$re1.test($cname.val()) || !$re2.test($idcard.val()) ||
         !$re3.test($email.val()) || !$re1.test($company.val()) ||
         !$re1.test($legal_name.val()) || !$re2.test($legal_id.val())) {
-
         let txt = "用户信息输入错误";
         window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
         $('.ok').click(function () {
             window.location.reload();
         });
-
     }
+
+    //传值
     else {
         data = {}
         data.cname = $("#cname").val();
@@ -97,24 +102,23 @@ $("#add_btn").click(function () {
         data.company = $("#company").val();
         data.legal_name = $("#legal_name").val();
         data.legal_id = $("#legal_id").val();
+
         $.ajaxSetup({
             data: {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
+
         $.post("/personnelAddPost/", data, function (data) {
             if (data == '0') {
-                // alert('编辑失败');
-                // window.location.href = "/personnelAdd/";
                 let txt = "编辑失败";
                 window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
                 $('.ok').click(function () {
                     window.location.href = "/personnelAdd/";
                 });
             }
+
             else if (data == '1') {
-                // alert('编辑成功');
-                // window.location.href = "/personnelManage/";
                 let txt = "编辑成功";
                 window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
                 $('.ok').click(function () {

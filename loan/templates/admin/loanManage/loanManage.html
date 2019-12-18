@@ -12,9 +12,10 @@
 {% block header %}
 <link rel="stylesheet" type="text/css" href="{% static 'loanManage/loanManage.css' %}" />
 <style>
-    #loanManage{
-        color:rgb(33, 86, 233);
-    }
+  #loanManage {
+    color: rgb(33, 86, 233);
+  }
+
   .table th {
     padding: 10px;
   }
@@ -26,9 +27,10 @@
   .search_bar input {
     font-size: 14px;
   }
-  #add_btn{
+
+  #add_btn {
     background-color: rgb(97, 150, 248);
-    color:white;
+    color: white;
     float: right;
     font-size: 14px;
     padding: 3px 10px 3px 10px;
@@ -38,21 +40,20 @@
 
 {% block content %}
 
-<div class="mainbar">
+<table class="mainbar">
   <!-- 搜索框 -->
   <form action="/loanManage/" method="post">
     {% csrf_token %}
-  <div class="search_bar">
-    <input type="text" class="form-control" placeholder='贷款产品' id="search_name" name="search_name">
-    <button type="submit" class="btn btn-info" id="search_btn">搜索</button>
-  </div>
-</form>
+    <div class="search_bar">
+      <input type="text" class="form-control" placeholder='贷款产品' id="search_name" name="search_name">
+      <button type="submit" class="btn btn-info" id="search_btn">搜索</button>
+    </div>
+  </form>
 
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
         <th>贷款编号</th>
-        <!-- 详情页 -->
         <th>贷款产品</th>
         <th>贷款额度/万</th>
         <th>贷款利率</th>
@@ -75,9 +76,7 @@
       </tbody>
     </div>
   </table>
-<a href="/loanDetails2/">  <button type="button" class="btn"id="add_btn">新增</button></a>
-</div>
-<!-- <img src="{% static 'image/lb1.jpg' %}" > -->
+  <a href="/loanDetails2/"> <button type="button" class="btn" id="add_btn">新增</button></a>
+</table>
 <script type="text/javascript" src="{% static 'loanManage/loanManage.js' %}"></script>
-<!-- <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script> -->
 {% endblock %}

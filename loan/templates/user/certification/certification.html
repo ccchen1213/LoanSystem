@@ -20,25 +20,24 @@
     <a href="/index" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/certification"> 企业认证</a>
 </div>
 <hr>
+<div class="container" style="display: flex">
+    <!-- 侧边栏 -->
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="header" style="font-size:17px;color:#a1aab2">我的金融助手</li>
+                <li><a href="/myLoan/"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
+                <li class="header" style="font-size:17px;color:#a1aab2">公司资料管理</li>
+                <li><a href="/certification/" style="color: #007bff; font-weight: bolder"><i
+                            class="fa fa-address-card"></i> <span>企业认证</span></a></li>
+                <li class="header" style="font-size:17px;color:#a1aab2">基本设置</li>
+                <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
+                <li class="header" style="font-size:17px;color:#a1aab2">个人信用</li>
+                <li><a href="/credit/"><i class="fa fa-phone-square"></i> <span>信用评级</span></a></li>
 
-
-    <div class="container" style="display: flex">
-        <!-- 侧边栏 -->
-        <aside class="main-sidebar">
-            <section class="sidebar">
-                <ul class="sidebar-menu">
-                    <li class="header" style="font-size:17px;color:#a1aab2">我的金融助手</li>
-                    <li><a href="/myLoan/"><i class="fa fa-usd fa-lg"></i> <span>我的贷款</span></a></li>
-                    <li class="header" style="font-size:17px;color:#a1aab2">公司资料管理</li>
-                    <li><a href="/certification/" style="color: #007bff; font-weight: bolder"><i class="fa fa-address-card"></i> <span>企业认证</span></a></li>
-                    <li class="header" style="font-size:17px;color:#a1aab2">基本设置</li>
-                    <li><a href="/personal/"><i class="fa fa-phone-square"></i> <span>绑定/修改邮箱</span></a></li>
-                    <li class="header" style="font-size:17px;color:#a1aab2">个人信用</li>
-                    <li><a href="/credit/"><i class="fa fa-phone-square"></i> <span>信用评级</span></a></li>
-
-                </ul>
-            </section>
-        </aside>
+            </ul>
+        </section>
+    </aside>
 
     <div class="form_bar">
         <form class="form-horizontal" role="form" action="//" method="post">
@@ -122,12 +121,9 @@
             <p id="info"></p>
             <div style="margin-left: 80px;display: flex;flex-direction: row;margin-top: 15px;">
                 <input type="button" value="提交" class="btn_submit" name="submit">
-                <!-- <p class="login_bar_p">&nbsp;&nbsp;免费注册</p> -->
             </div>
         </form>
     </div>
-
-
 </div>
 <script type="text/javascript" src="{% static 'certification/certification.js' %}"></script>
 <script type="text/javascript" src="{% static 'afterBase/afterBase.js' %}"></script>

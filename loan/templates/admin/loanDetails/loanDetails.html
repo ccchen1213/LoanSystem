@@ -1,22 +1,20 @@
 {# page:贷款详情页面可编辑 #}
 {# author:syn #}
-
 {% extends "admin/sidebar.html" %}
 {% load static %}
 <!--预先加载基本模板-->
-
 {% block title %}【高庄银行】我的贷款{% endblock %}
 {% block BasicTable %}贷款详情编辑{% endblock %}
 <!--填充title模块-->
-
 {% block header %}
 <link rel="stylesheet" type="text/css" href="{% static 'loanDetails/loanDetails.css' %}" />
 <script src="//cdn.ckeditor.com/4.12.1/full/ckeditor.js"></script>
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <style>
-     #loanManage{
-        color:rgb(33, 86, 233);
+    #loanManage {
+        color: rgb(33, 86, 233);
     }
+
     .btn-info {
         background-color: rgb(131, 174, 255);
         border: none;
@@ -27,10 +25,9 @@
     }
 </style>
 {% endblock %}
-
 {% block content %}
 <div class="mainbar">
-<p id="info"></p>
+    <p id="info"></p>
     <form class="form-horizontal" role="form">
         {% csrf_token %}
         <div class="mainbar_input">
@@ -58,16 +55,16 @@
                 </div>
                 <div class="form-group">
                     <label for="lastname" class="col-sm-3 control-label">贷款期限</label>
-                    <div class="col-sm-6"style="display:flex;flex-direction:row">
-                            <input type="text" class="form-control" id="time_min" value="{{ credit.monthmin }}">-
-                            <input type="text" class="form-control" id="time_max" value="{{ credit.monthmax }}">
+                    <div class="col-sm-6" style="display:flex;flex-direction:row">
+                        <input type="text" class="form-control" id="time_min" value="{{ credit.monthmin }}">-
+                        <input type="text" class="form-control" id="time_max" value="{{ credit.monthmax }}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="firstname" class="col-sm-3 control-label">利率</label>
-                    <div class="col-sm-6"style="display:flex;flex-direction:row">
-                            <input type="text" class="form-control" id="rate_min" value="{{ credit.monthirmin }}">-
-                            <input type="text" class="form-control" id="rate_max" value="{{ credit.monthirmax }}">
+                    <div class="col-sm-6" style="display:flex;flex-direction:row">
+                        <input type="text" class="form-control" id="rate_min" value="{{ credit.monthirmin }}">-
+                        <input type="text" class="form-control" id="rate_max" value="{{ credit.monthirmax }}">
                     </div>
                 </div>
             </div>
@@ -105,22 +102,17 @@
                 </div>
             </div>
         </div>
-
-
         <div class="mainbar_textarea">
             <textarea class="ckeditor" cols="80" id="loanRich1" rows="10" name="content">{{ credit.detail }}</textarea>
-            <textarea class="ckeditor" cols="80" id="loanRich2" rows="10" name="content">{{ credit.condition }}</textarea>
-            <textarea class="ckeditor" cols="80" id="loanRich3" rows="10" name="content">{{ credit.material }}</textarea>
+            <textarea class="ckeditor" cols="80" id="loanRich2" rows="10"
+                name="content">{{ credit.condition }}</textarea>
+            <textarea class="ckeditor" cols="80" id="loanRich3" rows="10"
+                name="content">{{ credit.material }}</textarea>
         </div>
-
-        <button type="button" class="btn btn-info" 
-        id="edit_btn">提交编辑</button>
+        <button type="button" class="btn btn-info" id="edit_btn">提交编辑</button>
     </form>
-
 </div>
-
 <script type="text/javascript">
-
 </script>
 <script type="text/javascript" src="{% static 'loanDetails/loanDetails.js' %}"></script>
 {% endblock %}
