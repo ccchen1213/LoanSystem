@@ -10,36 +10,36 @@
 <!--填充title模块-->
 
 {% block header %}
-<link rel="stylesheet" type="text/css" href="{% static 'aboutus/aboutus.css' %}" />
-<style>
-    input {
-        border: 1px solid rgb(56, 76, 252);
-        height: 30px;
-        width: 200px;
-        padding: 7px 0px;
-        border-radius: 10px;
-        padding-left: 5px;
-        margin-top: 5px;
-        outline: none;
+    <link rel="stylesheet" type="text/css" href="{% static 'aboutus/aboutus.css' %}"/>
+    <style>
+        input {
+            border: 1px solid rgb(56, 76, 252);
+            height: 30px;
+            width: 200px;
+            padding: 7px 0px;
+            border-radius: 10px;
+            padding-left: 5px;
+            margin-top: 5px;
+            outline: none;
 
-    }
-</style>
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
 
-<div class="body">
-    <div class="bread">
-        <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="aboutus.html"> 关于我们</a>
+    <div class="body">
+        <div class="bread">
+            <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="aboutus.html"> 关于我们</a>
 
+        </div>
+        <hr>
+
+        <div class="content">
+            {% block intro %}
+
+            {% endblock %}
+
+        </div>
     </div>
-    <hr>
-
-    <div class="content">
-        {% block intro %}
-
-        {% endblock %}
-
-    </div>
-</div>
 {% endblock %}

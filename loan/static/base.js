@@ -31,18 +31,18 @@ if (1) {
 else {
     $login_or_personal.append(h2);
 }
-$("#out_btn").click(function(){
+$("#out_btn").click(function () {
     var txt = "确定退出？";
     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info);
-    $('.ok').click(function(){
+    $('.ok').click(function () {
         $.ajaxSetup({
             data: {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
         $.post("/logoutPost/", function (data) {
-            if(data=="1")
-            window.location.href="/login/";
+            if (data == "1")
+                window.location.href = "/login/";
         })
     });
 })

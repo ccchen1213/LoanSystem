@@ -1,3 +1,4 @@
+// eCharts图
 var myChart = echarts.init(document.getElementById('main'));
 var option = {
     title: {
@@ -7,18 +8,18 @@ var option = {
     tooltip: {},
     legend: {
         data: ['各项得分'],
-        x:'600px'
+        x: '600px'
     },
     radar: [
         {
             indicator: [
-                { text: '客户属性' },
-                { text: '可用额度' },
-                { text: '法人年龄' },
-                { text: '负债率' },
-                { text: '月收入' },
-                { text: '信贷数量' },
-                { text: '固定资产贷款量' }
+                {text: '客户属性'},
+                {text: '可用额度'},
+                {text: '法人年龄'},
+                {text: '负债率'},
+                {text: '月收入'},
+                {text: '信贷数量'},
+                {text: '固定资产贷款量'}
             ],
             center: ['50%', '50%'],
             radius: 120,
@@ -26,9 +27,9 @@ var option = {
             splitNumber: 4,
             shape: 'circle',
             name: {
-                formatter:'【{value}】',
+                formatter: '【{value}】',
                 textStyle: {
-                    color:'#72ACD1'
+                    color: '#72ACD1'
                 }
             },
             splitArea: {

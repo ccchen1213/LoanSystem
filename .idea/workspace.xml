@@ -2,172 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a65b5fb5-99e1-4843-9c77-7774490556e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/loanSystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/creditCode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/creditModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/lib/admin/result.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/aboutus/aboutus.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/aboutus/service.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/afterBase/afterBase.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/afterBase/afterBase.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/alert/xcConfirm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/alert/xcConfirm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/apply/apply.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/apply/apply.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/apply/applyForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/apply/applyForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/approvalFiel.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/backstageLogin/backstageLogin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/backstageLogin/backstageLogin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/base.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/certification/certification.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/certification/certification.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/certify/certify.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/certify/certify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/credit/credit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/credit/credit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/echarts/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/home/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/home/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/Mj.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/Ml.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/Mp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/Mw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/bklogin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/error.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/head.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/head2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/header.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/lb1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/lb2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/lb3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/lc_table.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/license1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/license2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/license3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/license4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/license5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/login.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/logo.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/logo1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/muban.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/mubana.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/personal1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/piggy_bank.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/pointes_blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/pp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/sq_table.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/公司财务报表.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/新苗申请.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/自然人担保人资料.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/资产负债明细表 - 副本.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/资产负债明细表.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/image/采购合同.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/lib/admin/muban.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanApproval/loanApproval.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanApproval/loanApproval.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanApprovalDetails/loanApprovalDetails.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanApprovalDetails/loanApprovalDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanDetails/loanDetails.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanDetails/loanDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanDetails2/loanDetails2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanDetails2/loanDetails2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanManage/loanManage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loanManage/loanManage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loans/loans.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/loans/loans.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/login/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/login/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/myLoan/myLoan.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/myLoan/myLoan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/personal/personal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/personal/personal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/personnelAdd/personnelAdd.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/personnelAdd/personnelAdd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/personnelEdit/personnelEdit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/personnelEdit/personnelEdit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/personnelManage/personnelManage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/personnelManage/personnelManage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/register/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/register/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/sidebar/sidebar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/static/sidebar/sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/backstageLogin/backstageLogin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanApproval/loanApproval.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanApprovalDetails/loanApprovalDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanDetails/loanDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanDetails/loanRich1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanDetails/loanRich2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanDetails/loanRich3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanDetails2/loanDetails2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanDetails2/loanRich1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanDetails2/loanRich2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanDetails2/loanRich3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/loanManage/loanManage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/personnelAdd/personnelAdd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/personnelEdit/personnelEdit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/personnelManage/personnelManage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/admin/sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/afterBase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/errorPages/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/errorPages/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/aboutBase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/aboutus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/company.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/connect.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/service.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/apply/apply.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/apply/applyForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/certification/certification.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/certify/certify.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/credit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/home/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/loans/loans.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/login/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/myLoan/myLoan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/personal/credit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/personal/personal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/templates/user/register/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loan/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loanSystem/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loanSystem/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loanSystem/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loanSystem/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../loanSystem/loan/lib/admin/result.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../loanSystem/loan/static/credit/credit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../loanSystem/loan/static/credit/credit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../loanSystem/loan/static/echarts/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../loanSystem/loan/static/lib/admin/muban.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/static/loanApproval/loanApproval.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/static/loanApproval/loanApproval.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/static/personnelEdit/personnelEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/static/personnelEdit/personnelEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/static/personnelManage/personnelManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/static/personnelManage/personnelManage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/static/sidebar/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/static/sidebar/sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/templates/admin/personnelEdit/personnelEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/templates/admin/personnelEdit/personnelEdit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/templates/admin/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/templates/admin/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/templates/user/aboutus/connect.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/templates/user/aboutus/connect.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/templates/user/apply/applyForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/templates/user/apply/applyForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/templates/user/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/templates/user/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/templates/user/personal/credit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/templates/user/personal/credit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loanSystem/loan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../loanSystem/loan/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/static/apply/applyForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/loan/static/apply/applyForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/static/credit/credit.js" beforeDir="false" afterPath="$PROJECT_DIR$/loan/static/credit/credit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/static/loanApproval/loanApproval.js" beforeDir="false" afterPath="$PROJECT_DIR$/loan/static/loanApproval/loanApproval.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/afterBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/afterBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/aboutus/aboutBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/aboutBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/aboutus/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/aboutus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/aboutus/company.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/company.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/aboutus/connect.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/connect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/aboutus/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/aboutus/service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/apply/apply.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/apply/apply.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/apply/applyForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/apply/applyForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/certification/certification.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/certification/certification.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/certify/certify.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/certify/certify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/loans/loans.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/loans/loans.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/myLoan/myLoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/myLoan/myLoan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/personal/credit.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/personal/credit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/personal/personal.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/personal/personal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/templates/user/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/loan/templates/user/register/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,43 +37,76 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loan/templates/user/login/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1430">
-              <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loan/static/apply/apply.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/loan/static/apply/applyForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-594">
-              <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loan/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4906">
-              <caret line="223" selection-start-line="223" selection-end-line="223" />
+            <state relative-caret-position="-249">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#1097#1115#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loan/templates/user/apply/applyForm.html">
+        <entry file="file://$PROJECT_DIR$/loan/templates/user/myLoan/myLoan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3762">
-              <caret line="171" column="40" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
+            <state relative-caret-position="-418">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loan/templates/user/personal/credit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loan/templates/user/personal/personal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loan/templates/user/register/register.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loan/templates/user/credit.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loan/templates/user/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loan/templates/afterBase.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/loan/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loan/templates/user/loans/loans.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -226,18 +116,38 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>loginpost</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/loan/views.py" />
-        <option value="$PROJECT_DIR$/loan/templates/user/login/login.html" />
         <option value="$PROJECT_DIR$/loan/static/apply/apply.js" />
         <option value="$PROJECT_DIR$/loan/static/apply/applyForm.js" />
+        <option value="$PROJECT_DIR$/loan/static/loanApproval/loanApproval.js" />
+        <option value="$PROJECT_DIR$/loan/static/credit/credit.js" />
+        <option value="$PROJECT_DIR$/loan/templates/user/aboutus/aboutBase.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/aboutus/aboutus.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/aboutus/company.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/aboutus/connect.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/aboutus/service.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/apply/apply.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/apply/applyForm.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/certification/certification.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/certify/certify.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/home/home.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/loans/loans.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/login/login.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/myLoan/myLoan.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/personal/credit.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/personal/personal.html" />
+        <option value="$PROJECT_DIR$/loan/templates/user/register/register.html" />
+        <option value="$PROJECT_DIR$/loan/templates/afterBase.html" />
+        <option value="$PROJECT_DIR$/loan/templates/base.html" />
       </list>
     </option>
   </component>
@@ -247,10 +157,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="346" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="387" />
+    <option name="y" value="1" />
     <option name="width" value="1405" />
-    <option name="height" value="1089" />
+    <option name="height" value="1073" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -289,12 +200,14 @@
               <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
               <item name="loan" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="loanSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="loanSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="loan" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="errorPages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -305,7 +218,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576468438904" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576655588777" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -339,17 +252,25 @@
       <workItem from="1576459915570" duration="314000" />
       <workItem from="1576464703480" duration="2229000" />
       <workItem from="1576629579062" duration="92000" />
-      <workItem from="1576632822267" duration="184000" />
+      <workItem from="1576632822267" duration="5366000" />
     </task>
+    <task id="LOCAL-00001" summary="部署版本">
+      <created>1576633687979</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576633687979</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2819000" />
+    <option name="totallyTimeSpent" value="8001000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="277" y="0" width="1124" height="871" extended-state="0" />
+    <frame x="-7" y="-7" width="1463" height="878" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3217636" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2049822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -364,7 +285,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.17886178" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.17718121" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -386,17 +307,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="部署版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="部署版本" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/loan/templates/user/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1430">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loan/static/apply/apply.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/loan/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4906">
@@ -407,19 +322,164 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/apply/applyForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/afterBase/afterBase.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/apply/apply.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/certification/certification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/certify/certify.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/loanApproval/loanApproval.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/loans/loans.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/login/login.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/myLoan/myLoan.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/personal/personal.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/static/credit/credit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-528">
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/aboutus/aboutBase.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/aboutus/aboutus.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/aboutus/company.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/aboutus/connect.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/aboutus/service.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/apply/apply.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/loan/templates/user/apply/applyForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3762">
+        <state relative-caret-position="3630">
           <caret line="171" column="40" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loan/static/apply/applyForm.js">
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/certification/certification.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/certify/certify.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
-          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        <state relative-caret-position="308">
+          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/loans/loans.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="e#1097#1115#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/myLoan/myLoan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-418">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/personal/credit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/personal/personal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/register/register.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/credit.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/user/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/afterBase.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loan/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
