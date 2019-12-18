@@ -44,7 +44,6 @@ urlpatterns = [
     url('personnelEditPost/', views.personnelEditPost, name='personnelEditPost'),
     url('personnelAddPost/', views.personnelAddPost, name='personnelAddPost'),
     url('backstageLogin/', views.backstageLogin, name='backstageLogin'),
-    #url('', views.home, name='home'),
     url('sidebar/', views.sidebar, name='sidebar'),
     url('applyFirst/', views.applyFirst, name='applyFirst'),
     url('applyFiles/',views.applyFiles,name='applyFiles'),
