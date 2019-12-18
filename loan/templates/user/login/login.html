@@ -10,42 +10,42 @@
 <!--填充title模块-->
 
 {% block header %}
-<link rel="stylesheet" type="text/css" href="{% static 'login/login.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'login/login.css' %}"/>
 
-<style>
-    input {
-        border: 1px solid rgb(56, 76, 252);
-        height: 30px;
-        width: 200px;
-        padding: 7px 0px;
-        border-radius: 10px;
-        padding-left: 5px;
-        margin-top: 5px;
-        outline: none;
+    <style>
+        input {
+            border: 1px solid rgb(56, 76, 252);
+            height: 30px;
+            width: 200px;
+            padding: 7px 0px;
+            border-radius: 10px;
+            padding-left: 5px;
+            margin-top: 5px;
+            outline: none;
 
-    }
+        }
 
-    .login_bar_p {
-        font-size: 15px;
-        display: block;
-        margin-top: 7px;
-    }
+        .login_bar_p {
+            font-size: 15px;
+            display: block;
+            margin-top: 7px;
+        }
 
-    .btn_login {
-        background-color: #2192f5;
-        color: white;
-        height: 30px;
-        line-height: 15px;
-        border: none;
-        border-radius: 20px;
-        outline: none;
-    }
-</style>
+        .btn_login {
+            background-color: #2192f5;
+            color: white;
+            height: 30px;
+            line-height: 15px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
 
-<div class="body">
+    <div class="body">
 
     {#    <div class="breadnav">#}
     {#        <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a>#}
@@ -67,8 +67,17 @@
                 {% csrf_token %}
                 <div style="display: flex;flex-direction: row;">
                     <div style="display: flex;flex-direction: row;">
-                        <p class="login_bar_p">手机/邮箱：</p>
-                        <input type="email" name="phone_email" id="email_text">
+                        <div style="display: flex;flex-direction: row;">
+                            <p class="login_bar_p">手机/邮箱：</p>
+                            <input type="email" name="phone_email" id="email_text">
+                        </div>
+
+                    </div>
+                    <p id="info" class="info">{{ msg }}</p>
+                    <div style="display: flex;flex-direction: row;margin-left: 20px;margin-top: 15px;">
+                        <p class="login_bar_p"> 密码：</p>
+                        <input type="password" name="password">
+                        <!-- <p class="login_bar_p">&nbsp;&nbsp;忘记密码？</p> -->
                     </div>
                 </div>
                 <p id="info" class="info">{{msg}}</p>

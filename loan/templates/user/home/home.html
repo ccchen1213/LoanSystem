@@ -9,38 +9,39 @@
 <!--填充title模块-->
 
 {% block header %}
-<link rel="stylesheet" type="text/css" href="{% static 'home/home.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/home.css' %}"/>
 {% endblock %}
 
 {% block content %}
 
-<!-- 轮播图 -->
-<div id="demo" class="carousel slide" data-ride="carousel">
+    <!-- 轮播图 -->
+    <div id="demo" class="carousel slide" data-ride="carousel">
 
-    <!-- 指示符 -->
-    <ul class="carousel-indicators">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-        <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
+        <!-- 指示符 -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
 
-    <!-- 轮播图片 -->
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{% static 'image/lb1.jpg' %}" class="item_img">
+        <!-- 轮播图片 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'image/lb1.jpg' %}" class="item_img">
 
-            <div class="carousel-caption" style="position:absolute;left:-500px;top:100px">
-                <h3>扩大你的生意，</h3>
-                <h3>资金不是问题</h3>
-                <p class="item_p">高老庄效贷，小微企业信用贷款服务平台</p>
-                <a href="/loans/" class="btn btn-info" role="button">立即贷款</a>
+                <div class="carousel-caption" style="position:absolute;left:-500px;top:100px">
+                    <h3>扩大你的生意，</h3>
+                    <h3>资金不是问题</h3>
+                    <p class="item_p">高老庄效贷，小微企业信用贷款服务平台</p>
+                    <a href="/loans/" class="btn btn-info" role="button">立即贷款</a>
+                </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <img src="{% static 'image/lb2.jpg' %}" class="item_img">
-            <div class="carousel-caption" style="position:absolute;left:-500px;top:100px">
-                <h3>小微企业信用贷款服务平台</h3>
-                <p class="item_p">值得信赖!</p>
+            <div class="carousel-item">
+                <img src="{% static 'image/lb2.jpg' %}" class="item_img">
+                <div class="carousel-caption" style="position:absolute;left:-500px;top:100px">
+                    <h3>小微企业信用贷款服务平台</h3>
+                    <p class="item_p">值得信赖!</p>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
@@ -52,16 +53,15 @@
             </div>
         </div>
     </div>
-</div>
 
-<!-- 左右切换按钮 -->
-<a class="carousel-control-prev" href="#demo" data-slide="prev" style="top:100px">
-    <span class="carousel-control-prev-icon"></span>
-</a>
-<a class="carousel-control-next" href="#demo" data-slide="next" style="top:100px">
-    <span class="carousel-control-next-icon"></span>
-</a>
-<!-- 轮播图end -->
+    <!-- 左右切换按钮 -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev" style="top:100px">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next" style="top:100px">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+    <!-- 轮播图end -->
 
 <div class="main1">
     <div class="container">
@@ -103,7 +103,7 @@
                     <p style="line-height: 5px;">贷款审批通过后，我们会收取审批金额1.5%的费用</p>
                 </div>
 
-            </div>
+                </div>
 
             <div class="main1_right">
                 <h6 style="color: rgb(13, 90, 206);">还款计算表</h6>
@@ -134,109 +134,108 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="main2">
-    <div class="container">
-        <div style="text-align:center;margin-top:30px;padding-top: 30px;">
-            <h3><strong>在线即可申请，以数定额</strong></h3>
-            <p style="opacity: 0.5;">本银行与金融机构联合定制化信贷产品，客户审批通过率更高</p>
-        </div>
-        <div style="display: flex;flex-direction: row;margin-left: 80px;margin-top: -10px;">
-            <div>
-                <img src="{% static 'image/pp.jpg' %}" class="pp1">
-                <div class="blue_sm">
-                    <p>什么样的企业有资格申请</p>
-                </div>
+    <div class="main2">
+        <div class="container">
+            <div style="text-align:center;margin-top:30px;padding-top: 30px;">
+                <h3><strong>在线即可申请，以数定额</strong></h3>
+                <p style="opacity: 0.5;">本银行与金融机构联合定制化信贷产品，客户审批通过率更高</p>
             </div>
-
-            <div class="sq">
-                <h6><strong>申请资料单</strong></h6>
-                <hr class="sq_hr">
-                <div style="font-size: 14px;">
-                    <p>1,法人身份证原件</p>
-                    <p>2，营业执照</p>
-                    <p>3，银行卡照片</p>
-                    <p>4，有企业开票，税务数据</p>
-                </div>
-                <div class="sq_q">
-                    <img src="{% static 'image/lc_table.png' %}"
-                        style="width: 300px;margin-top: -500px;margin-left: 200px;">
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="main3">
-    <div class="container">
-        <div style="text-align:center;margin-top:30px;padding-top: 30px;">
-            <h3><strong>客户故事</strong></h3>
-            <p style="opacity: 0.5;">我们的每一次进步，都源于你的支持</p>
-        </div>
-
-        <div class="man_top">
-            <div class="man1">
+            <div style="display: flex;flex-direction: row;margin-left: 80px;margin-top: -10px;">
                 <div>
-                    <img src="{% static 'image/Mj.png' %}" class="man_img">
-                </div>
-                <div class="man_p">
-                    <h6><strong>温先生</strong></h6>
-                    <p class="man_t">湖南**食品科技有限公司</p>
-                    <p class="man_pp">正好需要资金去储备肉品，最后用开票数据作为凭据申请了贷款，
-                        很快就下款了，资金周转效率得到了保证</p>
-                </div>
-            </div>
-
-            <div class="man2">
-                <div>
-                    <img src="{% static 'image/Ml.png' %}" class="man_img">
-                </div>
-                <div class="man_p">
-                    <h6><strong>吴先生</strong></h6>
-                    <p class="man_t">东莞**电子科技有限公司</p>
-                    <p class="man_pp">听朋友说高庄金融可以办理信用贷款，恰逢资金紧张，
-                        抱着试试看的态度做了申请，没想到很快就审批通过了</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="man_bottom">
-            <div class="man1">
-                <div class="man_p">
-                    <h6><strong>温先生</strong></h6>
-                    <p class="man_t">湖南**食品科技有限公司</p>
-                    <p class="man_pp">正好需要资金去储备肉品，最后用开票数据作为凭据申请了贷款，
-                        很快就下款了，资金周转效率得到了保证</p>
-                </div>
-                <div>
-                    <img src="{% static 'image/Mp.png' %}" class="man_img" style="margin-left:-20px">
+                    <img src="{% static 'image/pp.jpg' %}" class="pp1">
+                    <div class="blue_sm">
+                        <p>什么样的企业有资格申请</p>
+                    </div>
                 </div>
 
-            </div>
-
-            <div class="man2">
-                <div class="man_p">
-                    <h6><strong>温先生</strong></h6>
-                    <p class="man_t">湖南**食品科技有限公司</p>
-                    <p class="man_pp">正好需要资金去储备肉品，最后用开票数据作为凭据申请了贷款，
-                        很快就下款了，资金周转效率得到了保证</p>
-                </div>
-                <div>
-                    <img src="{% static 'image/Mw.png' %}" class="man_img" style="margin-left:-20px">
+                <div class="sq">
+                    <h6><strong>申请资料单</strong></h6>
+                    <hr class="sq_hr">
+                    <div style="font-size: 14px;">
+                        <p>1,法人身份证原件</p>
+                        <p>2，营业执照</p>
+                        <p>3，银行卡照片</p>
+                        <p>4，有企业开票，税务数据</p>
+                    </div>
+                    <div class="sq_q">
+                        <img src="{% static 'image/lc_table.png' %}"
+                             style="width: 300px;margin-top: -500px;margin-left: 200px;">
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
-</div>
 
-<div class="main4">
-    <div class="container">
-        <div style="text-align:center;margin-top:30px;padding-top: 30px;">
-            <h3><strong>常见问题</strong></h3>
+    <div class="main3">
+        <div class="container">
+            <div style="text-align:center;margin-top:30px;padding-top: 30px;">
+                <h3><strong>客户故事</strong></h3>
+                <p style="opacity: 0.5;">我们的每一次进步，都源于你的支持</p>
+            </div>
+
+            <div class="man_top">
+                <div class="man1">
+                    <div>
+                        <img src="{% static 'image/Mj.png' %}" class="man_img">
+                    </div>
+                    <div class="man_p">
+                        <h6><strong>温先生</strong></h6>
+                        <p class="man_t">湖南**食品科技有限公司</p>
+                        <p class="man_pp">正好需要资金去储备肉品，最后用开票数据作为凭据申请了贷款，
+                            很快就下款了，资金周转效率得到了保证</p>
+                    </div>
+                </div>
+
+                <div class="man2">
+                    <div>
+                        <img src="{% static 'image/Ml.png' %}" class="man_img">
+                    </div>
+                    <div class="man_p">
+                        <h6><strong>吴先生</strong></h6>
+                        <p class="man_t">东莞**电子科技有限公司</p>
+                        <p class="man_pp">听朋友说高庄金融可以办理信用贷款，恰逢资金紧张，
+                            抱着试试看的态度做了申请，没想到很快就审批通过了</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="man_bottom">
+                <div class="man1">
+                    <div class="man_p">
+                        <h6><strong>温先生</strong></h6>
+                        <p class="man_t">湖南**食品科技有限公司</p>
+                        <p class="man_pp">正好需要资金去储备肉品，最后用开票数据作为凭据申请了贷款，
+                            很快就下款了，资金周转效率得到了保证</p>
+                    </div>
+                    <div>
+                        <img src="{% static 'image/Mp.png' %}" class="man_img" style="margin-left:-20px">
+                    </div>
+
+                </div>
+
+                <div class="man2">
+                    <div class="man_p">
+                        <h6><strong>温先生</strong></h6>
+                        <p class="man_t">湖南**食品科技有限公司</p>
+                        <p class="man_pp">正好需要资金去储备肉品，最后用开票数据作为凭据申请了贷款，
+                            很快就下款了，资金周转效率得到了保证</p>
+                    </div>
+                    <div>
+                        <img src="{% static 'image/Mw.png' %}" class="man_img" style="margin-left:-20px">
+                    </div>
+
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="main4">
+        <div class="container">
+            <div style="text-align:center;margin-top:30px;padding-top: 30px;">
+                <h3><strong>常见问题</strong></h3>
+            </div>
 
         <div class="panel-group main4_table" id="accordion">
             <div class="panel panel-default m4_p">
@@ -270,6 +269,14 @@
                             多个数据源，帮助企业构建信用报告，让金融机构读懂小微企业，从而提升贷款审批通过率
                         </p>
                     </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>我们通过机器学习的算法估算企业及企业贷款人的信用评分，全面了解企业经营状况，从而提升贷款审批通过率。
+                                具体来说，我们通过大数据等科技手段，可以整合包括企业信用数据、企业税务数据等在内的
+                                多个数据源，帮助企业构建信用报告，让金融机构读懂小微企业，从而提升贷款审批通过率
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="panel panel-default m4_p">
@@ -288,7 +295,6 @@
                         </p>
                     </div>
                 </div>
-            </div>
 
             <div class="panel panel-default m4_p">
                 <div class="panel-heading">
@@ -304,9 +310,9 @@
                             高庄效贷提供的均为纯信用贷款产品，无需企业提供任何实物、房产形式的抵押物。
                         </p>
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
             <div class="panel panel-default m4_p">
                 <div class="panel-heading">
@@ -327,7 +333,6 @@
                     </div>
                 </div>
             </div>
-        </div>
 
         {#        <div class="main4_table">#}
         {#            <p class="m4_p">>&nbsp;&nbsp;01为什么企业通过高庄贷款是更好的选择？</p>#}
@@ -345,6 +350,5 @@
             <a href="/loans/">查看高庄效贷详情>></a>
         </div>
     </div>
-</div>
-<script type="text/javascript" src="{% static 'home/home.js' %}"></script>
+    <script type="text/javascript" src="{% static 'home/home.js' %}"></script>
 {% endblock %}

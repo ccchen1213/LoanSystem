@@ -10,18 +10,18 @@
 <!--填充title模块-->
 
 {% block header %}
-    <link rel="stylesheet" type="text/css" href="{% static 'apply/apply.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'apply/apply.css' %}"/>
 {% endblock %}
 
 {% block content %}
     <div class="breadnav">
         <a href="/home/" style="color:#000"><i class="fa fa-home"></i> 首页 </a>
-        > <a href="/loans/"  style="color:#000"> 高庄效贷</a>
+        > <a href="/loans/" style="color:#000"> 高庄效贷</a>
         > <a href="/loans/"> 信贷详情</a>
     </div>
     <hr>
 
-{#    {% for x in credit %}#}
+    {#    {% for x in credit %}#}
     <div class="apply-info">
         <div class="info">
             <div class="applyInfo">
@@ -30,42 +30,43 @@
                         贷款申请信息</label>
                 </div>
                 <div class="applyInput" style="margin-left: 13%">
-                        <div class="value">
-                            <span style="color: red">*</span><label>申请金额：</label>
-                            <input type="text"
-                                   name="money"
-                                   class="formstyle"
-                                   id="money"
-                                   placeholder="申请额度为{{ credit.amountmin }}-{{ credit.amountmax }}万元">
-                            <span> 万元</span>
-                            <p class="moneyhint"></p>
-                        </div>
+                    <div class="value">
+                        <span style="color: red">*</span><label>申请金额：</label>
+                        <input type="text"
+                               name="money"
+                               class="formstyle"
+                               id="money"
+                               placeholder="申请额度为{{ credit.amountmin }}-{{ credit.amountmax }}万元">
+                        <span> 万元</span>
+                        <p class="moneyhint"></p>
+                    </div>
 
-                        <div class="time">
-                            <span style="color: red">*</span><label>申请期限：</label>
-                            <input type="text"
-                                   name="month"
-                                   id="month"
-                                   class="formstyle"
-                                   placeholder="贷款期限为{{ credit.monthmin }}-{{ credit.monthmax }}个月">
-                            <span> 个月</span>
-                            <p class="monthhint"></p>
-                        </div>
+                    <div class="time">
+                        <span style="color: red">*</span><label>申请期限：</label>
+                        <input type="text"
+                               name="month"
+                               id="month"
+                               class="formstyle"
+                               placeholder="贷款期限为{{ credit.monthmin }}-{{ credit.monthmax }}个月">
+                        <span> 个月</span>
+                        <p class="monthhint"></p>
+                    </div>
 
-                        <div class="agree">
+                    <div class="agree">
 
-                            <input type="checkbox" id="agree" name="check" value="1">我已阅读并同意以下协议：
-                            <br>
-                            <span>《互联网金融协议》</span>
-                            <br>
-                            <span>《信息查询申请表》</span>
-                            <br>
-                            <p class="accepthint"></p>
+                        <input type="checkbox" id="agree" name="check" value="1">我已阅读并同意以下协议：
+                        <br>
+                        <span>《互联网金融协议》</span>
+                        <br>
+                        <span>《信息查询申请表》</span>
+                        <br>
+                        <p class="accepthint"></p>
 
-                            <button type="button" id="predictPay" class="btn"
-                                    style="background-color: #ced4da;margin-top: 10px">查看预计费用</button>
+                        <button type="button" id="predictPay" class="btn"
+                                style="background-color: #ced4da;margin-top: 10px">查看预计费用
+                        </button>
 
-                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -89,7 +90,7 @@
                                class="formstyle"
                                id="interest"
                                disabled="disabled"
-                            >
+                        >
                     </div>
                     <div class="intesInfo">
                         <label class="waysLabel">月供(元)</label>
@@ -98,7 +99,7 @@
                                class="formstyle"
                                id="monthPay"
                                disabled="disabled"
-                            >
+                        >
                     </div>
                     <span style="color: red">*以上结果仅供参考，以金融机构实际审批结果为准</span>
                     <br/>
@@ -145,20 +146,21 @@
             <div class="tab-content">
                 <div id="intro" class="tab-pane active"><br>
                     <h5 style="color: #000;font-weight: bolder">详细描述</h5>
-                    {{credit.detail | safe}}
+                    {{ credit.detail | safe }}
 
 
                     <h5 style="color: #000;font-weight: bolder">申请条件</h5>
-                    {{credit.condition | safe}}
+                    {{ credit.condition | safe }}
 
                     <h5 style="color: #000;font-weight: bolder">所需材料</h5>
-                    {{credit.material | safe}}
+                    {{ credit.material | safe }}
                 </div>
 
                 <div id="query" class="tab-pane fade"><br>
                     <p>暂时还没有人提问</p>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                        我要提问</button>
+                        我要提问
+                    </button>
 
                     <!-- 模态框 -->
                     <div class="modal fade" id="myModal">
@@ -191,7 +193,7 @@
                                                        name="username"
                                                        id="username"
                                                        type="text"
-                                                       placeholder="用于接收问题答复" />
+                                                       placeholder="用于接收问题答复"/>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -201,7 +203,7 @@
                                                        name="phone"
                                                        id="phone"
                                                        type="text"
-                                                       placeholder="必要时给您电话答疑" />
+                                                       placeholder="必要时给您电话答疑"/>
                                             </div>
                                         </div>
 
@@ -221,9 +223,9 @@
                     </div>
 
                 </div>
-                </div>
             </div>
         </div>
+    </div>
 
     <script>
         let moneyInput = $("#money");
@@ -233,52 +235,52 @@
 
         {#申请额度的校验#}
         moneyInput.blur(function () {
-            if(moneyInput.val() >= {{ credit.amountmin }}
-                && moneyInput.val() <= {{ credit.amountmax }}){
+            if (moneyInput.val() >= {{ credit.amountmin }}
+                && moneyInput.val() <= {{ credit.amountmax }}) {
                 //申请额度在范围内
-                moneyInput.css("border","1px #0f0 solid");
+                moneyInput.css("border", "1px #0f0 solid");
                 $(".moneyhint").html("")
-                
+
             }
-            else{
-                moneyInput.css("border","1px #f00 solid");
-                $(".moneyhint").html("申请额度有误").css("color","red");
+            else {
+                moneyInput.css("border", "1px #f00 solid");
+                $(".moneyhint").html("申请额度有误").css("color", "red");
             }
         });
 
         {#申请月份的校验#}
         monthInput.blur(function () {
-            if(monthInput.val() >= {{ credit.monthmin }}
-                && monthInput.val() <= {{ credit.monthmax }}){
-                monthInput.css("border","1px #0f0 solid");
+            if (monthInput.val() >= {{ credit.monthmin }}
+                && monthInput.val() <= {{ credit.monthmax }}) {
+                monthInput.css("border", "1px #0f0 solid");
                 $(".monthhint").html("");
             }
-            else{
-                monthInput.css("border","1px #f00 solid");
-                $(".monthhint").html("贷款期限有误").css("color","red");
+            else {
+                monthInput.css("border", "1px #f00 solid");
+                $(".monthhint").html("贷款期限有误").css("color", "red");
 
             }
         });
 
         {#预计金额事件#}
         predictBtn.click(function () {
-            if(moneyInput.val() >= {{ credit.amountmin }}
+            if (moneyInput.val() >= {{ credit.amountmin }}
                 && moneyInput.val() <= {{ credit.amountmax }}
                 && monthInput.val() >= {{ credit.monthmin }}
-                && monthInput.val() <= {{ credit.monthmax }}){
+                && monthInput.val() <= {{ credit.monthmax }}) {
                 console.log(111111);
-                    let ir = '{{ credit.monthirmin }}'.replace("%","");
-                    let interst = monthInput.val()*moneyInput.val()*parseFloat(ir);
-                    $("#interest").val("最低"+parseFloat(interst*100).toFixed(2));
-                    $("#interest").css("color","#ff8a00");
-                    $("#monthPay").val("最低"+parseFloat(interst/monthInput.val()*100).toFixed(2));
-                    $("#monthPay").css("color","#ff8a00");
-                    $("#ways").css("color","#ff8a00");
+                let ir = '{{ credit.monthirmin }}'.replace("%", "");
+                let interst = monthInput.val() * moneyInput.val() * parseFloat(ir);
+                $("#interest").val("最低" + parseFloat(interst * 100).toFixed(2));
+                $("#interest").css("color", "#ff8a00");
+                $("#monthPay").val("最低" + parseFloat(interst / monthInput.val() * 100).toFixed(2));
+                $("#monthPay").css("color", "#ff8a00");
+                $("#ways").css("color", "#ff8a00");
             }
-            else{
+            else {
                 let txt = "信息有误";
                 window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
-                $('.ok').click(function(){
+                $('.ok').click(function () {
                     window.location.reload();
                 });
             }
@@ -286,15 +288,15 @@
 
         {#提交申请金额和月份的校验#}
         submitBtn.click(function () {
-            if(moneyInput.val() >= {{ credit.amountmin }}
+            if (moneyInput.val() >= {{ credit.amountmin }}
                 && moneyInput.val() <= {{ credit.amountmax }}
                 && monthInput.val() >= {{ credit.monthmin }}
                 && monthInput.val() <= {{ credit.monthmax }}
                 && $("input[type='checkbox']").attr('value') == 1) {
 
                 let data = {
-                    'applyAmount':moneyInput.val(),
-                    'applyMonth':monthInput.val()
+                    'applyAmount': moneyInput.val(),
+                    'applyMonth': monthInput.val()
                 };
                 {# 前端校验通过 发送请求#}
                 $.ajaxSetup({
@@ -305,24 +307,24 @@
 
                 $.post('/applyFirst/', data, function (res) {
                     console.log(1121212);
-                    if(res == '1'){
+                    if (res == '1') {
                         window.location.href = '/applyForm/';
                     }
-                    else{
+                    else {
                         let txt = res.message;
                         window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
-                        $('.ok').click(function(){
+                        $('.ok').click(function () {
                             window.location.reload();
                         });
                     }
                 })
             }
 
-            {#信息错误(前端校验)#}
-            else{
+                {#信息错误(前端校验)#}
+            else {
                 var txt = "信息有误";
                 window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
-                $('.ok').click(function(){
+                $('.ok').click(function () {
                     window.location.reload();
                 });
             }

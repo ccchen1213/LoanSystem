@@ -10,15 +10,15 @@
 <!--填充title模块-->
 
 {% block header %}
-<link rel="stylesheet" type="text/css" href="{% static 'personal/personal.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'afterBase/afterBase.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'personal/personal.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'afterBase/afterBase.css' %}"/>
 {% endblock %}
 
 {% block content %}
-<div class="breadnav">
-    <a href="/index" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/personal"> 基本设置</a>
-</div>
-<hr>
+    <div class="breadnav">
+        <a href="/index" style="color:#000"><i class="fa fa-home"></i> 首页 </a> > <a href="/personal"> 基本设置</a>
+    </div>
+    <hr>
 
 <div class="container" style="display: flex;">
     <!-- 侧边栏 -->

@@ -10,8 +10,8 @@
 <!--填充title模块-->
 
 {% block header %}
-<link rel="stylesheet" type="text/css" href="{% static 'certification/certification.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'afterBase/afterBase.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'certification/certification.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'afterBase/afterBase.css' %}"/>
 
 {% endblock %}
 
@@ -39,83 +39,88 @@
         </section>
     </aside>
 
-    <div class="form_bar">
-        <form class="form-horizontal" role="form" action="//" method="post">
-            {% csrf_token %}
-            <div class="div_h5" style="margin-left:-150px">
-                <h5>企业认证</h5>
-            </div>
+        <div class="form_bar">
+            <form class="form-horizontal" role="form" action="//" method="post">
+                {% csrf_token %}
+                <div class="div_h5" style="margin-left:-150px">
+                    <h5>企业认证</h5>
+                </div>
 
-            <div class="form-group" style=" margin-top: 40px;">
-                <label for="firstname" class="col-sm-4 control-label">企业名称</label>
-                <div class="col-sm-5">
-                    {% if customer.company == None%}
-                    <input type="text" class="form-control" id="Company_Name" placeholder="请输入企业名称"
-                        style="font-size:16px" value="">
-                    {% else %}
-                    <input type="text" class="form-control" id="Company_Name" placeholder="请输入企业名称"
-                        style="font-size:16px" value="{{ customer.company }}">
-                    {% endif %}
+                <div class="form-group" style=" margin-top: 40px;">
+                    <label for="firstname" class="col-sm-4 control-label">企业名称</label>
+                    <div class="col-sm-5">
+                        {% if customer.company == None %}
+                            <input type="text" class="form-control" id="Company_Name" placeholder="请输入企业名称"
+                                   style="font-size:16px" value="">
+                        {% else %}
+                            <input type="text" class="form-control" id="Company_Name" placeholder="请输入企业名称"
+                                   style="font-size:16px" value="{{ customer.company }}">
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="lastname" class="col-sm-4 control-label">统一社会信用代码</label>
-                <div class="col-sm-5">
-                    {% if customer.credit_id == None%}
-                    <input type="text" class="form-control" id="Credit_code" placeholder="请输入统一社会信用代码" value=""
-                        style="font-size:16px">
-                    {% else %}
-                    <input type="text" class="form-control" id="Credit_code" placeholder="请输入统一社会信用代码"
-                        value="{{ customer.credit_id }}" style="font-size:16px">
-                    {% endif %}
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-4 control-label">统一社会信用代码</label>
+                    <div class="col-sm-5">
+                        {% if customer.credit_id == None %}
+                            <input type="text" class="form-control" id="Credit_code" placeholder="请输入统一社会信用代码" value=""
+                                   style="font-size:16px">
+                        {% else %}
+                            <input type="text" class="form-control" id="Credit_code" placeholder="请输入统一社会信用代码"
+                                   value="{{ customer.credit_id }}" style="font-size:16px">
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="firstname" class="col-sm-4 control-label">法定代表人姓名</label>
-                <div class="col-sm-5">
-                    {% if customer.legal_name == None%}
-                    <input type="text" class="form-control" id="Legal_representative_name" placeholder="请输入法定代表人姓名"
-                        value="" style="font-size:16px">
-                    {% else %}
-                    <input type="text" class="form-control" id="Legal_representative_name" placeholder="请输入法定代表人姓名"
-                        value="{{ customer.legal_name }}" style="font-size:16px">
-                    {% endif %}
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-4 control-label">法定代表人姓名</label>
+                    <div class="col-sm-5">
+                        {% if customer.legal_name == None %}
+                            <input type="text" class="form-control" id="Legal_representative_name"
+                                   placeholder="请输入法定代表人姓名"
+                                   value="" style="font-size:16px">
+                        {% else %}
+                            <input type="text" class="form-control" id="Legal_representative_name"
+                                   placeholder="请输入法定代表人姓名"
+                                   value="{{ customer.legal_name }}" style="font-size:16px">
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="lastname" class="col-sm-4 control-label">法定代表人身份证号码</label>
-                <div class="col-sm-5">
-                    {% if customer.legal_id == None%}
-                    <input type="text" class="form-control" id="Legal_representative_id" placeholder="请输入法定代表人身份证号码"
-                        value="" style="font-size:16px">
-                    {% else %}
-                    <input type="text" class="form-control" id="Legal_representative_id" placeholder="请输入法定代表人身份证号码"
-                        value="{{ customer.legal_id }}" style="font-size:16px">
-                    {% endif %}
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-4 control-label">法定代表人身份证号码</label>
+                    <div class="col-sm-5">
+                        {% if customer.legal_id == None %}
+                            <input type="text" class="form-control" id="Legal_representative_id"
+                                   placeholder="请输入法定代表人身份证号码"
+                                   value="" style="font-size:16px">
+                        {% else %}
+                            <input type="text" class="form-control" id="Legal_representative_id"
+                                   placeholder="请输入法定代表人身份证号码"
+                                   value="{{ customer.legal_id }}" style="font-size:16px">
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="firstname" class="col-sm-4 control-label">法定代表人银行卡号</label>
-                <div class="col-sm-5">
-                    {% if customer.card == None%}
-                    <input type="text" class="form-control" id="Legal_representative_card" placeholder="请输入银行卡号"
-                        value="" style="font-size:16px">
-                    {% else %}
-                    <input type="text" class="form-control" id="Legal_representative_card" placeholder="请输入银行卡号"
-                        value="{{ customer.card }}" style="font-size:16px">
-                    {% endif %}
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-4 control-label">法定代表人银行卡号</label>
+                    <div class="col-sm-5">
+                        {% if customer.card == None %}
+                            <input type="text" class="form-control" id="Legal_representative_card" placeholder="请输入银行卡号"
+                                   value="" style="font-size:16px">
+                        {% else %}
+                            <input type="text" class="form-control" id="Legal_representative_card" placeholder="请输入银行卡号"
+                                   value="{{ customer.card }}" style="font-size:16px">
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="lastname" class="col-sm-4 control-label">银行预留手机号</label>
-                <div class="col-sm-5">
-                    {% if customer.bank_phone == None%}
-                    <input type="text" class="form-control" id="Bank_phone" placeholder="请输入银行预留手机号" value=""
-                        style="font-size:16px">
-                    {% else %}
-                    <input type="text" class="form-control" id="Bank_phone" placeholder="请输入银行预留手机号"
-                        value="{{ customer.bank_phone }}" style="font-size:16px">
-                    {% endif %}
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-4 control-label">银行预留手机号</label>
+                    <div class="col-sm-5">
+                        {% if customer.bank_phone == None %}
+                            <input type="text" class="form-control" id="Bank_phone" placeholder="请输入银行预留手机号" value=""
+                                   style="font-size:16px">
+                        {% else %}
+                            <input type="text" class="form-control" id="Bank_phone" placeholder="请输入银行预留手机号"
+                                   value="{{ customer.bank_phone }}" style="font-size:16px">
+                        {% endif %}
+                    </div>
                 </div>
             </div>
             <p id="info"></p>

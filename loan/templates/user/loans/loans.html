@@ -9,7 +9,7 @@
 <!--填充title模块-->
 
 {% block header %}
-    <link rel="stylesheet" type="text/css" href="{% static 'loans/loans.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'loans/loans.css' %}"/>
 {% endblock %}
 
 {% block content %}
@@ -25,26 +25,26 @@
         <div class="credit">
             <h3>信用贷款</h3>
             {% for x in credit %}
-            <div class="easy row">
-                <div class="col-sm-4">
-                    <h4>{{ x.name }}</h4>
-                    <p>{{ x.info }}</p>
+                <div class="easy row">
+                    <div class="col-sm-4">
+                        <h4>{{ x.name }}</h4>
+                        <p>{{ x.info }}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="num">{{ x.amountmin }}-{{ x.amountmax }}</span>万
+                        <br/>额度
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="num">{{ x.monthmin }}-{{ x.monthmax }}</span>
+                        <br/>个月
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="numi">{{ x.monthirmin }}-{{ x.monthirmax }}</span><br/>月利率
+                    </div>
+                    <div class="col-sm-2" style="margin-top: 15px">
+                        <a class="btn btn-primary" href="/apply/?id={{ x.id }}">立即申请</a>
+                    </div>
                 </div>
-                <div class="col-sm-2">
-                    <span class="num">{{ x.amountmin }}-{{ x.amountmax }}</span>万
-                    <br/>额度
-                </div>
-                <div class="col-sm-2">
-                    <span class="num">{{ x.monthmin }}-{{ x.monthmax }}</span>
-                    <br/>个月
-                </div>
-                <div class="col-sm-2">
-                    <span class="numi">{{ x.monthirmin }}-{{ x.monthirmax }}</span><br/>月利率
-                </div>
-                <div class="col-sm-2" style="margin-top: 15px">
-                    <a class="btn btn-primary" href="/apply/?id={{ x.id }}">立即申请</a>
-                </div>
-            </div>
             {% endfor %}
         </div>
 

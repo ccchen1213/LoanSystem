@@ -6,25 +6,23 @@ let flagTwo = [false,false,false];
 let flagThree = [false,false];
 let flagFour = [false,false,false];
 
+// 导航栏的样式变化
 if($("#stepOne").hasClass("active")){
-    console.log(222);
     $("#stepTwo").addClass("disabled");
     $("#stepThree").addClass("disabled");
     $("#stepFour").addClass("disabled");
 };
 
 if($("#stepTwo").hasClass("active")){
-    console.log(222);
     $("#stepThree").addClass("disabled");
     $("#stepFour").addClass("disabled");
 };
 
 if($("#stepThree").hasClass("active")){
-    console.log(222);
     $("#stepFour").addClass("disabled");
 };
 
-
+//企业名称校验
 nameInput.blur(function nameCheck() {
     if(nameInput.val() == null || nameInput.val() == ""){
         nameInput.css("border","1px #f00 solid");
@@ -38,6 +36,7 @@ nameInput.blur(function nameCheck() {
     }
 });
 
+//企业代码校验
 codeInput.blur(function codeCheck() {
     if(codeInput.val() == null || codeInput.val() == ""){
         codeInput.css("border","1px #f00 solid");
@@ -118,7 +117,6 @@ $("#nextStep1").click(function () {
             flagOne[i] = true;
         }
     }
-    console.log(flagOne);
 
     if(flagOne[0] == true && flagOne[1] == true && flagOne[2] == true
         && flagOne[3] == true && flagOne[4] == true){
@@ -158,7 +156,6 @@ $("#nextStep2").click(function () {
             flagTwo[i] = true;
         }
     }
-    console.log(flagTwo);
 
     if(flagTwo[0] == true && flagTwo[1] == true && flagTwo[2] == true){
         allDatas.push(datas);
@@ -197,7 +194,6 @@ $("#nextStep3").click(function () {
             flagThree[i] = true;
         }
     }
-    console.log(flagThree);
 
     if(flagThree[0] == true && flagThree[1] == true
     ){
@@ -237,16 +233,14 @@ $("#submit").click(function () {
             flagFour[i] = true;
         }
     }
-    console.log(flagFour);
+
 
     if(flagFour[0] == true && flagFour[1] == true && flagFour[2] == true) {
         allDatas.push(datas);
 
-        console.log(allDatas);
-        let sendData = {
-            'companyName': allDatas[0][0],
+        // console.log(allDatas);
 
-        };
+        //将数据存入FormData
         let sendFormData = new FormData();
         sendFormData.append('companyName',allDatas[0][0]);
         sendFormData.append('creditCode', allDatas[0][1]);
@@ -262,13 +256,15 @@ $("#submit").click(function () {
         sendFormData.append('guarantor',allDatas[3][1]);
         sendFormData.append('natural',allDatas[3][2]);
 
-        console.log(sendFormData);
+        // console.log(sendFormData);
 
         $.ajaxSetup({
             data: {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
         });
+
+        //将表单信息发给后端
         $.ajax({
             type:'POST',
             url:"/applyFiles/",
@@ -287,17 +283,17 @@ $("#submit").click(function () {
                 else {
                     let txt = "提交失败";
                     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
-                    // $('.ok').click(function(){
-                    //     window.location.reload();
-                    // });
+                    $('.ok').click(function(){
+                        window.location.reload();
+                    });
                 }
             },
             error:function () {
                 let txt = "提交失败";
                 window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
-                // $('.ok').click(function(){
-                //     window.location.reload();
-                // });
+                $('.ok').click(function(){
+                    window.location.reload();
+                });
             }
         })
     }
